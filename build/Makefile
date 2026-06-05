@@ -129,12 +129,26 @@ modulation_toolkit/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/build
 .PHONY : modulation_toolkit/fast
 
+#=============================================================================
+# Target rules for targets named encoder_validation
+
+# Build rule for target.
+encoder_validation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encoder_validation
+.PHONY : encoder_validation
+
+# fast build rule for target.
+encoder_validation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/build
+.PHONY : encoder_validation/fast
+
 src/channel/awgn_channel.o: src/channel/awgn_channel.cpp.o
 .PHONY : src/channel/awgn_channel.o
 
 # target to build an object file
 src/channel/awgn_channel.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/channel/awgn_channel.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o
 .PHONY : src/channel/awgn_channel.cpp.o
 
 src/channel/awgn_channel.i: src/channel/awgn_channel.cpp.i
@@ -143,6 +157,7 @@ src/channel/awgn_channel.i: src/channel/awgn_channel.cpp.i
 # target to preprocess a source file
 src/channel/awgn_channel.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/channel/awgn_channel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.i
 .PHONY : src/channel/awgn_channel.cpp.i
 
 src/channel/awgn_channel.s: src/channel/awgn_channel.cpp.s
@@ -151,6 +166,7 @@ src/channel/awgn_channel.s: src/channel/awgn_channel.cpp.s
 # target to generate assembly for a file
 src/channel/awgn_channel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/channel/awgn_channel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.s
 .PHONY : src/channel/awgn_channel.cpp.s
 
 src/channel/multipath_channel.o: src/channel/multipath_channel.cpp.o
@@ -231,6 +247,7 @@ src/fec/conv_encoder.o: src/fec/conv_encoder.cpp.o
 # target to build an object file
 src/fec/conv_encoder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/conv_encoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.o
 .PHONY : src/fec/conv_encoder.cpp.o
 
 src/fec/conv_encoder.i: src/fec/conv_encoder.cpp.i
@@ -239,6 +256,7 @@ src/fec/conv_encoder.i: src/fec/conv_encoder.cpp.i
 # target to preprocess a source file
 src/fec/conv_encoder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/conv_encoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.i
 .PHONY : src/fec/conv_encoder.cpp.i
 
 src/fec/conv_encoder.s: src/fec/conv_encoder.cpp.s
@@ -247,6 +265,7 @@ src/fec/conv_encoder.s: src/fec/conv_encoder.cpp.s
 # target to generate assembly for a file
 src/fec/conv_encoder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/conv_encoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.s
 .PHONY : src/fec/conv_encoder.cpp.s
 
 src/fec/interleaver.o: src/fec/interleaver.cpp.o
@@ -279,6 +298,7 @@ src/fec/viterbi_decoder.o: src/fec/viterbi_decoder.cpp.o
 # target to build an object file
 src/fec/viterbi_decoder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/viterbi_decoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.o
 .PHONY : src/fec/viterbi_decoder.cpp.o
 
 src/fec/viterbi_decoder.i: src/fec/viterbi_decoder.cpp.i
@@ -287,6 +307,7 @@ src/fec/viterbi_decoder.i: src/fec/viterbi_decoder.cpp.i
 # target to preprocess a source file
 src/fec/viterbi_decoder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/viterbi_decoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.i
 .PHONY : src/fec/viterbi_decoder.cpp.i
 
 src/fec/viterbi_decoder.s: src/fec/viterbi_decoder.cpp.s
@@ -295,6 +316,7 @@ src/fec/viterbi_decoder.s: src/fec/viterbi_decoder.cpp.s
 # target to generate assembly for a file
 src/fec/viterbi_decoder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/viterbi_decoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.s
 .PHONY : src/fec/viterbi_decoder.cpp.s
 
 src/hw/bladerf_device.o: src/hw/bladerf_device.cpp.o
@@ -375,6 +397,7 @@ src/measurement/ber_analyzer.o: src/measurement/ber_analyzer.cpp.o
 # target to build an object file
 src/measurement/ber_analyzer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/ber_analyzer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o
 .PHONY : src/measurement/ber_analyzer.cpp.o
 
 src/measurement/ber_analyzer.i: src/measurement/ber_analyzer.cpp.i
@@ -383,6 +406,7 @@ src/measurement/ber_analyzer.i: src/measurement/ber_analyzer.cpp.i
 # target to preprocess a source file
 src/measurement/ber_analyzer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/ber_analyzer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.i
 .PHONY : src/measurement/ber_analyzer.cpp.i
 
 src/measurement/ber_analyzer.s: src/measurement/ber_analyzer.cpp.s
@@ -391,6 +415,7 @@ src/measurement/ber_analyzer.s: src/measurement/ber_analyzer.cpp.s
 # target to generate assembly for a file
 src/measurement/ber_analyzer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/ber_analyzer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.s
 .PHONY : src/measurement/ber_analyzer.cpp.s
 
 src/measurement/evm_meter.o: src/measurement/evm_meter.cpp.o
@@ -447,6 +472,7 @@ src/modulation/bpsk_demod.o: src/modulation/bpsk_demod.cpp.o
 # target to build an object file
 src/modulation/bpsk_demod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_demod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o
 .PHONY : src/modulation/bpsk_demod.cpp.o
 
 src/modulation/bpsk_demod.i: src/modulation/bpsk_demod.cpp.i
@@ -455,6 +481,7 @@ src/modulation/bpsk_demod.i: src/modulation/bpsk_demod.cpp.i
 # target to preprocess a source file
 src/modulation/bpsk_demod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_demod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.i
 .PHONY : src/modulation/bpsk_demod.cpp.i
 
 src/modulation/bpsk_demod.s: src/modulation/bpsk_demod.cpp.s
@@ -463,6 +490,7 @@ src/modulation/bpsk_demod.s: src/modulation/bpsk_demod.cpp.s
 # target to generate assembly for a file
 src/modulation/bpsk_demod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_demod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.s
 .PHONY : src/modulation/bpsk_demod.cpp.s
 
 src/modulation/bpsk_mod.o: src/modulation/bpsk_mod.cpp.o
@@ -471,6 +499,7 @@ src/modulation/bpsk_mod.o: src/modulation/bpsk_mod.cpp.o
 # target to build an object file
 src/modulation/bpsk_mod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_mod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o
 .PHONY : src/modulation/bpsk_mod.cpp.o
 
 src/modulation/bpsk_mod.i: src/modulation/bpsk_mod.cpp.i
@@ -479,6 +508,7 @@ src/modulation/bpsk_mod.i: src/modulation/bpsk_mod.cpp.i
 # target to preprocess a source file
 src/modulation/bpsk_mod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_mod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.i
 .PHONY : src/modulation/bpsk_mod.cpp.i
 
 src/modulation/bpsk_mod.s: src/modulation/bpsk_mod.cpp.s
@@ -487,6 +517,7 @@ src/modulation/bpsk_mod.s: src/modulation/bpsk_mod.cpp.s
 # target to generate assembly for a file
 src/modulation/bpsk_mod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_mod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.s
 .PHONY : src/modulation/bpsk_mod.cpp.s
 
 src/modulation/demodulator_base.o: src/modulation/demodulator_base.cpp.o
@@ -495,6 +526,7 @@ src/modulation/demodulator_base.o: src/modulation/demodulator_base.cpp.o
 # target to build an object file
 src/modulation/demodulator_base.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/demodulator_base.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o
 .PHONY : src/modulation/demodulator_base.cpp.o
 
 src/modulation/demodulator_base.i: src/modulation/demodulator_base.cpp.i
@@ -503,6 +535,7 @@ src/modulation/demodulator_base.i: src/modulation/demodulator_base.cpp.i
 # target to preprocess a source file
 src/modulation/demodulator_base.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/demodulator_base.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.i
 .PHONY : src/modulation/demodulator_base.cpp.i
 
 src/modulation/demodulator_base.s: src/modulation/demodulator_base.cpp.s
@@ -511,6 +544,7 @@ src/modulation/demodulator_base.s: src/modulation/demodulator_base.cpp.s
 # target to generate assembly for a file
 src/modulation/demodulator_base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/demodulator_base.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.s
 .PHONY : src/modulation/demodulator_base.cpp.s
 
 src/modulation/fm_mod.o: src/modulation/fm_mod.cpp.o
@@ -543,6 +577,7 @@ src/modulation/mm_timing_pll.o: src/modulation/mm_timing_pll.cpp.o
 # target to build an object file
 src/modulation/mm_timing_pll.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/mm_timing_pll.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o
 .PHONY : src/modulation/mm_timing_pll.cpp.o
 
 src/modulation/mm_timing_pll.i: src/modulation/mm_timing_pll.cpp.i
@@ -551,6 +586,7 @@ src/modulation/mm_timing_pll.i: src/modulation/mm_timing_pll.cpp.i
 # target to preprocess a source file
 src/modulation/mm_timing_pll.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/mm_timing_pll.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.i
 .PHONY : src/modulation/mm_timing_pll.cpp.i
 
 src/modulation/mm_timing_pll.s: src/modulation/mm_timing_pll.cpp.s
@@ -559,6 +595,7 @@ src/modulation/mm_timing_pll.s: src/modulation/mm_timing_pll.cpp.s
 # target to generate assembly for a file
 src/modulation/mm_timing_pll.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/mm_timing_pll.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.s
 .PHONY : src/modulation/mm_timing_pll.cpp.s
 
 src/modulation/modulator_base.o: src/modulation/modulator_base.cpp.o
@@ -567,6 +604,7 @@ src/modulation/modulator_base.o: src/modulation/modulator_base.cpp.o
 # target to build an object file
 src/modulation/modulator_base.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/modulator_base.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o
 .PHONY : src/modulation/modulator_base.cpp.o
 
 src/modulation/modulator_base.i: src/modulation/modulator_base.cpp.i
@@ -575,6 +613,7 @@ src/modulation/modulator_base.i: src/modulation/modulator_base.cpp.i
 # target to preprocess a source file
 src/modulation/modulator_base.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/modulator_base.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.i
 .PHONY : src/modulation/modulator_base.cpp.i
 
 src/modulation/modulator_base.s: src/modulation/modulator_base.cpp.s
@@ -583,6 +622,7 @@ src/modulation/modulator_base.s: src/modulation/modulator_base.cpp.s
 # target to generate assembly for a file
 src/modulation/modulator_base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/modulator_base.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.s
 .PHONY : src/modulation/modulator_base.cpp.s
 
 src/modulation/qam_demod.o: src/modulation/qam_demod.cpp.o
@@ -687,6 +727,7 @@ src/modulation/rrc_filter.o: src/modulation/rrc_filter.cpp.o
 # target to build an object file
 src/modulation/rrc_filter.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/rrc_filter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o
 .PHONY : src/modulation/rrc_filter.cpp.o
 
 src/modulation/rrc_filter.i: src/modulation/rrc_filter.cpp.i
@@ -695,6 +736,7 @@ src/modulation/rrc_filter.i: src/modulation/rrc_filter.cpp.i
 # target to preprocess a source file
 src/modulation/rrc_filter.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/rrc_filter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.i
 .PHONY : src/modulation/rrc_filter.cpp.i
 
 src/modulation/rrc_filter.s: src/modulation/rrc_filter.cpp.s
@@ -703,6 +745,7 @@ src/modulation/rrc_filter.s: src/modulation/rrc_filter.cpp.s
 # target to generate assembly for a file
 src/modulation/rrc_filter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/rrc_filter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.s
 .PHONY : src/modulation/rrc_filter.cpp.s
 
 src/ofdm/channel_estimator.o: src/ofdm/channel_estimator.cpp.o
@@ -801,6 +844,30 @@ src/ofdm/resource_grid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.s
 .PHONY : src/ofdm/resource_grid.cpp.s
 
+tests/ber_loopback_test.o: tests/ber_loopback_test.cpp.o
+.PHONY : tests/ber_loopback_test.o
+
+# target to build an object file
+tests/ber_loopback_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.o
+.PHONY : tests/ber_loopback_test.cpp.o
+
+tests/ber_loopback_test.i: tests/ber_loopback_test.cpp.i
+.PHONY : tests/ber_loopback_test.i
+
+# target to preprocess a source file
+tests/ber_loopback_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.i
+.PHONY : tests/ber_loopback_test.cpp.i
+
+tests/ber_loopback_test.s: tests/ber_loopback_test.cpp.s
+.PHONY : tests/ber_loopback_test.s
+
+# target to generate assembly for a file
+tests/ber_loopback_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.s
+.PHONY : tests/ber_loopback_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -809,6 +876,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... encoder_validation"
 	@echo "... modulation_toolkit"
 	@echo "... src/channel/awgn_channel.o"
 	@echo "... src/channel/awgn_channel.i"
@@ -894,6 +962,9 @@ help:
 	@echo "... src/ofdm/resource_grid.o"
 	@echo "... src/ofdm/resource_grid.i"
 	@echo "... src/ofdm/resource_grid.s"
+	@echo "... tests/ber_loopback_test.o"
+	@echo "... tests/ber_loopback_test.i"
+	@echo "... tests/ber_loopback_test.s"
 .PHONY : help
 
 

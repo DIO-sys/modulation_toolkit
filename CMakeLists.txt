@@ -41,16 +41,14 @@ if(NOT SOAPY_INCLUDE_DIR OR NOT SOAPY_LIBRARY)
         "Install with: sudo apt install libsoapysdr-dev")
 endif()
 
-# ─── Sources ─────────────────────────────────────────────────────────────────
+# ─── Main executable ─────────────────────────────────────────────────────────
 
 add_executable(modulation_toolkit
     src/main.cpp
 
-    # hardware abstraction (ported from spectrum_analyzer)
     src/hw/circular_buffer.cpp
     src/hw/bladerf_device.cpp
 
-    # modulation layer
     src/modulation/modulator_base.cpp
     src/modulation/demodulator_base.cpp
     src/modulation/rrc_filter.cpp
@@ -64,26 +62,21 @@ add_executable(modulation_toolkit
     src/modulation/qam_demod.cpp
     src/modulation/mm_timing_pll.cpp
 
-    # FEC layer
     src/fec/conv_encoder.cpp
     src/fec/viterbi_decoder.cpp
     src/fec/interleaver.cpp
 
-    # OFDM layer
     src/ofdm/ofdm_modulator.cpp
     src/ofdm/ofdm_demodulator.cpp
     src/ofdm/resource_grid.cpp
     src/ofdm/channel_estimator.cpp
 
-    # channel models
     src/channel/awgn_channel.cpp
     src/channel/multipath_channel.cpp
 
-    # C-V2X
     src/cv2x/cv2x_sidelink.cpp
     src/cv2x/resource_pool.cpp
 
-    # measurement
     src/measurement/ber_analyzer.cpp
     src/measurement/evm_meter.cpp
 )
@@ -96,10 +89,36 @@ target_include_directories(modulation_toolkit PRIVATE
 )
 
 target_link_libraries(modulation_toolkit PRIVATE
-    ${BLADERF_LIBRARY}    # libbladeRF  — radio hardware
-    ${LIQUID_LIBRARY}     # liquid-dsp  — DSP reference + validation
-    ${SOAPY_LIBRARY}      # SoapySDR    — hardware abstraction layer
-    pthread               # std::thread backing
+    ${BLADERF_LIBRARY}
+    ${LIQUID_LIBRARY}
+    ${SOAPY_LIBRARY}
+    pthread
+)
+
+# ─── Test executable ─────────────────────────────────────────────────────────
+
+add_executable(encoder_validation
+    tests/ber_loopback_test.cpp
+    src/fec/conv_encoder.cpp
+    src/fec/viterbi_decoder.cpp
+    src/modulation/modulator_base.cpp
+    src/modulation/demodulator_base.cpp
+    src/modulation/rrc_filter.cpp
+    src/modulation/bpsk_mod.cpp
+    src/modulation/bpsk_demod.cpp
+    src/modulation/mm_timing_pll.cpp
+    src/channel/awgn_channel.cpp
+    src/measurement/ber_analyzer.cpp
+)
+
+target_include_directories(encoder_validation PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+    ${LIQUID_INCLUDE_DIR}
+)
+
+target_link_libraries(encoder_validation PRIVATE
+    ${LIQUID_LIBRARY}
+    pthread
 )
 
 # ─── Build type defaults ─────────────────────────────────────────────────────
@@ -111,24 +130,20 @@ endif()
 # ─── Compiler flags ──────────────────────────────────────────────────────────
 
 target_compile_options(modulation_toolkit PRIVATE
-    -Wall
-    -Wextra
-    -Werror
-    -march=native
-)
-
-target_compile_options(modulation_toolkit PRIVATE
+    -Wall -Wextra -Werror -march=native
     $<$<CONFIG:Release>:-O2>
-)
-
-target_compile_options(modulation_toolkit PRIVATE
     $<$<CONFIG:Debug>:-O0>
     $<$<CONFIG:Debug>:-g3>
 )
 
-# ─── Sanitizer targets ───────────────────────────────────────────────────────
-# cmake -DCMAKE_BUILD_TYPE=Debug -DSANITIZE=address ..
-# cmake -DCMAKE_BUILD_TYPE=Debug -DSANITIZE=thread  ..
+target_compile_options(encoder_validation PRIVATE
+    -Wall -Wextra -march=native
+    $<$<CONFIG:Release>:-O2>
+    $<$<CONFIG:Debug>:-O0>
+    $<$<CONFIG:Debug>:-g3>
+)
+
+# ─── Sanitizers ──────────────────────────────────────────────────────────────
 
 set(SANITIZE "" CACHE STRING "Sanitizer to enable: address | thread | (empty)")
 
@@ -136,12 +151,10 @@ if(SANITIZE STREQUAL "address")
     message(STATUS "AddressSanitizer enabled")
     target_compile_options(modulation_toolkit PRIVATE -fsanitize=address -fno-omit-frame-pointer)
     target_link_options   (modulation_toolkit PRIVATE -fsanitize=address)
-
 elseif(SANITIZE STREQUAL "thread")
     message(STATUS "ThreadSanitizer enabled")
     target_compile_options(modulation_toolkit PRIVATE -fsanitize=thread -fno-omit-frame-pointer)
     target_link_options   (modulation_toolkit PRIVATE -fsanitize=thread)
-
 elseif(NOT SANITIZE STREQUAL "")
     message(FATAL_ERROR "Unknown sanitizer '${SANITIZE}'. Use 'address' or 'thread'.")
-endif() 
+endif()
