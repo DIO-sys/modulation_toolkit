@@ -206,6 +206,11 @@ CMakeFiles/modulation_toolkit.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/timodagoat/code/modulation_toolkit/include/modulation/bpsk_demod.hpp \
  /home/timodagoat/code/modulation_toolkit/include/modulation/demodulator_base.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/mm_timing_pll.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/qpsk_mod.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/qpsk_demod.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/qam_mod.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/qam_demod.hpp \
  /home/timodagoat/code/modulation_toolkit/include/channel/awgn_channel.hpp \
  /usr/include/c++/15/random /usr/include/c++/15/bits/random.h \
  /usr/include/c++/15/bits/uniform_int_dist.h \
@@ -222,8 +227,4 @@ CMakeFiles/modulation_toolkit.dir/src/main.cpp.o: \
  /usr/include/c++/15/pstl/glue_numeric_defs.h \
  /usr/include/c++/15/pstl/execution_defs.h \
  /home/timodagoat/code/modulation_toolkit/include/measurement/ber_analyzer.hpp \
- /usr/include/c++/15/iostream /usr/include/c++/15/fstream \
- /usr/include/c++/15/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/c++io.h \
- /usr/include/c++/15/bits/fstream.tcc
+ /usr/include/c++/15/iostream
