@@ -1,0 +1,3 @@
+/home/timodagoat/code/modulation_toolkit/build/CMakeFiles/modulation_toolkit.dir
+/home/timodagoat/code/modulation_toolkit/build/CMakeFiles/edit_cache.dir
+/home/timodagoat/code/modulation_toolkit/build/CMakeFiles/rebuild_cache.dir
