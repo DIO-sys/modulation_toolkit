@@ -31,23 +31,38 @@ def theoretical_bpsk_coded_soft(ebn0_db, rate=0.5):
     ebn0_lin = 10 ** ((ebn0_db + 7.5) / 10.0)
     return 0.5 * erfc(np.sqrt(ebn0_lin * rate))
 
+def theoretical_bpsk_coded_hard_13(ebn0_db):
+    ebn0_lin = 10 ** ((ebn0_db + 7.0) / 10.0)
+    return 0.5 * erfc(np.sqrt(ebn0_lin * (1/3)))
+
+def theoretical_bpsk_coded_soft_13(ebn0_db):
+    ebn0_lin = 10 ** ((ebn0_db + 9.5) / 10.0)
+    return 0.5 * erfc(np.sqrt(ebn0_lin * (1/3)))
+
 results_dir = "../results"
+
 files = [
-    ("bpsk_uncoded_ber.csv",      "Uncoded BPSK",       "blue"),
-    ("bpsk_hard_viterbi_ber.csv", "Hard Viterbi (1/2)", "orange"),
-    ("bpsk_soft_viterbi_ber.csv", "Soft Viterbi (1/2)", "green"),
+    ("bpsk_uncoded_ber.csv",         "Uncoded BPSK",       "blue"),
+    ("bpsk_hard_viterbi_ber.csv",    "Hard Viterbi (1/2)", "orange"),
+    ("bpsk_soft_viterbi_ber.csv",    "Soft Viterbi (1/2)", "green"),
+    ("bpsk_hard_viterbi_13_ber.csv", "Hard Viterbi (1/3)", "red"),
+    ("bpsk_soft_viterbi_13_ber.csv", "Soft Viterbi (1/3)", "purple"),
 ]
 
 fig, ax = plt.subplots(figsize=(10, 7))
 
-ebn0_theory = np.linspace(-6, 14, 400)
+ebn0_theory = np.linspace(-8, 14, 400)
 
 ax.semilogy(ebn0_theory, theoretical_bpsk(ebn0_theory),
             '--', color='blue',   alpha=0.4, label='Uncoded theoretical')
 ax.semilogy(ebn0_theory, theoretical_bpsk_coded_hard(ebn0_theory),
-            '--', color='orange', alpha=0.4, label='Hard coded theoretical')
+            '--', color='orange', alpha=0.4, label='Hard 1/2 theoretical')
 ax.semilogy(ebn0_theory, theoretical_bpsk_coded_soft(ebn0_theory),
-            '--', color='green',  alpha=0.4, label='Soft coded theoretical')
+            '--', color='green',  alpha=0.4, label='Soft 1/2 theoretical')
+ax.semilogy(ebn0_theory, theoretical_bpsk_coded_hard_13(ebn0_theory),
+            '--', color='red',    alpha=0.4, label='Hard 1/3 theoretical')
+ax.semilogy(ebn0_theory, theoretical_bpsk_coded_soft_13(ebn0_theory),
+            '--', color='purple', alpha=0.4, label='Soft 1/3 theoretical')
 
 for fname, label, color in files:
     path = os.path.join(results_dir, fname)
@@ -62,10 +77,10 @@ for fname, label, color in files:
 
 ax.set_xlabel('Eb/N0 (dB)', fontsize=13)
 ax.set_ylabel('BER', fontsize=13)
-ax.set_title('BER vs Eb/N0 — uncoded vs hard vs soft Viterbi', fontsize=14)
-ax.legend(fontsize=11)
+ax.set_title('BER vs Eb/N0 — uncoded vs hard vs soft Viterbi (1/2 and 1/3)', fontsize=14)
+ax.legend(fontsize=10)
 ax.grid(True, which='both', linestyle='--', alpha=0.5)
-ax.set_xlim(-6, 14)
+ax.set_xlim(-8, 14)
 ax.set_ylim(1e-6, 1.0)
 
 plt.tight_layout()

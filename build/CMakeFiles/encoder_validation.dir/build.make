@@ -114,10 +114,24 @@ CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/fec/viterbi_decoder.cpp -o CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.s
 
+CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o: /home/timodagoat/code/modulation_toolkit/src/fec/interleaver.cpp
+CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o -MF CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/fec/interleaver.cpp
+
+CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/fec/interleaver.cpp > CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/fec/interleaver.cpp -o CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.s
+
 CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/modulator_base.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/modulator_base.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.s: cmake_for
 CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/demodulator_base.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/demodulator_base.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.s: cmake_f
 CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/rrc_filter.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/rrc_filter.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.s: cmake_force
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/bpsk_mod.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/bpsk_mod.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.s: cmake_force
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/bpsk_demod.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/bpsk_demod.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.s: cmake_force
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/mm_timing_pll.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/mm_timing_pll.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.s: cmake_forc
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o: /home/timodagoat/code/modulation_toolkit/src/channel/awgn_channel.cpp
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o -MF CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/channel/awgn_channel.cpp
 
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.s: cmake_force
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o: /home/timodagoat/code/modulation_toolkit/src/measurement/ber_analyzer.cpp
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o -MF CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/measurement/ber_analyzer.cpp
 
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.i: cmake_force
@@ -231,6 +245,7 @@ encoder_validation_OBJECTS = \
 "CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o" \
@@ -246,6 +261,7 @@ encoder_validation_EXTERNAL_OBJECTS =
 encoder_validation: CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o
@@ -258,7 +274,7 @@ encoder_validation: CMakeFiles/encoder_validation.dir/build.make
 encoder_validation: CMakeFiles/encoder_validation.dir/compiler_depend.ts
 encoder_validation: /usr/lib/x86_64-linux-gnu/libliquid.so
 encoder_validation: CMakeFiles/encoder_validation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable encoder_validation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable encoder_validation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/encoder_validation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

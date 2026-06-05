@@ -1,5 +1,6 @@
 #include "fec/conv_encoder.hpp"
 #include "fec/viterbi_decoder.hpp"
+#include "fec/interleaver.hpp"
 #include "channel/awgn_channel.hpp"
 #include "modulation/bpsk_mod.hpp"
 #include "modulation/bpsk_demod.hpp"
@@ -11,6 +12,7 @@
 #include <random>
 #include <cmath>
 #include <fstream>
+#include <string>
 
 std::vector<uint8_t> random_bits(size_t n, uint32_t seed = 42) {
     std::mt19937 rng(seed);
@@ -26,6 +28,19 @@ float measure_power(const std::vector<std::complex<float>>& samples) {
     for (const auto& s : samples)
         power += s.real() * s.real() + s.imag() * s.imag();
     return power / static_cast<float>(samples.size());
+}
+
+// deinterleave LLR floats using same index mapping as bit deinterleave
+std::vector<float> deinterleave_llrs(const std::vector<float>& llrs,
+                                      int rows, int cols)
+{
+    int block = rows * cols;
+    std::vector<float> out(llrs.size());
+    for (int i = 0; i < static_cast<int>(llrs.size()); i += block)
+        for (int row = 0; row < rows; ++row)
+            for (int col = 0; col < cols; ++col)
+                out[i + row * cols + col] = llrs[i + col * rows + row];
+    return out;
 }
 
 // ─── Encoder validation ───────────────────────────────────────────────────
@@ -159,22 +174,32 @@ std::vector<BERPoint> ber_sweep_uncoded(const std::vector<float>& snr_points,
 }
 
 std::vector<BERPoint> ber_sweep_coded(const std::vector<float>& snr_points,
-                                       size_t num_bits, bool soft)
+                                       size_t num_bits, bool soft,
+                                       int rate_denom,
+                                       const std::vector<uint8_t>& polys)
 {
     constexpr int   SPS     = 4;
     constexpr float ROLLOFF = 0.35f;
     constexpr int   SPAN    = 8;
+    constexpr int   IL_ROWS = 20;
+    constexpr int   IL_COLS = 10;
 
     BPSKModulator        mod(SPS, ROLLOFF, SPAN);
     BPSKDemodulator      demod(SPS, ROLLOFF, SPAN);
-    ConvolutionalEncoder enc(2, 7, {0133, 0171});
-    ViterbiDecoder       dec(2, 7, {0133, 0171});
+    ConvolutionalEncoder enc(rate_denom, 7, polys);
+    ViterbiDecoder       dec(rate_denom, 7, polys);
+    Interleaver          il(IL_ROWS, IL_COLS);
 
     std::vector<BERPoint> results;
     for (float snr_db : snr_points) {
-        auto tx_bits    = random_bits(num_bits);
-        auto coded      = enc.encode(tx_bits);
-        auto tx_samples = mod.modulate(coded);
+        auto tx_bits     = random_bits(num_bits);
+        auto coded       = enc.encode(tx_bits);
+        auto interleaved = il.interleave(coded);
+
+        // record interleaved size — demod output must match this
+        size_t il_size   = interleaved.size();
+
+        auto tx_samples  = mod.modulate(interleaved);
 
         AWGNChannel ch(snr_db);
         ch.set_signal_power(measure_power(tx_samples));
@@ -183,15 +208,37 @@ std::vector<BERPoint> ber_sweep_coded(const std::vector<float>& snr_points,
         std::vector<uint8_t> decoded;
         if (soft) {
             auto llrs = demod.demodulate_soft(rx_samples);
-            decoded   = dec.decode_soft(llrs);
+
+            // trim LLRs to interleaved size before deinterleaving
+            if (llrs.size() > il_size) llrs.resize(il_size);
+            while (llrs.size() < il_size) llrs.push_back(0.0f);
+
+            // deinterleave only full blocks
+            size_t safe_len = (llrs.size() / (IL_ROWS * IL_COLS))
+                              * (IL_ROWS * IL_COLS);
+            llrs.resize(safe_len);
+
+            auto llrs_dint = deinterleave_llrs(llrs, IL_ROWS, IL_COLS);
+            decoded        = dec.decode_soft(llrs_dint);
         } else {
             auto rx_coded = demod.demodulate(rx_samples);
-            decoded       = dec.decode_hard(rx_coded);
+
+            // trim to interleaved size
+            if (rx_coded.size() > il_size) rx_coded.resize(il_size);
+            while (rx_coded.size() < il_size) rx_coded.push_back(0);
+
+            auto dint = il.deinterleave(rx_coded);
+            decoded   = dec.decode_hard(dint);
         }
 
+        // trim tx_bits to decoded length
+        size_t compare_len = std::min(tx_bits.size(), decoded.size());
         std::vector<uint8_t> tx_trimmed(tx_bits.begin(),
-                                         tx_bits.begin() + decoded.size());
-        float ber = BERAnalyzer::compute_ber(tx_trimmed, decoded);
+                                         tx_bits.begin() + compare_len);
+        std::vector<uint8_t> rx_trimmed(decoded.begin(),
+                                         decoded.begin() + compare_len);
+
+        float ber = BERAnalyzer::compute_ber(tx_trimmed, rx_trimmed);
         results.push_back({snr_db, ber});
         std::printf("  [%-8s] SNR %5.1f dB | BER %.6f\n",
                     soft ? "soft" : "hard", snr_db, ber);
@@ -230,31 +277,40 @@ int main() {
 
     std::cout << "\n[BER sweep] uncoded vs hard vs soft — BPSK\n\n";
 
-    // uncoded: -2 to 10 dB
     std::vector<float> snr_uncoded;
     for (float snr = -2.0f; snr <= 10.0f; snr += 0.5f)
         snr_uncoded.push_back(snr);
 
-    // coded: -8 to 6 dB — wider range for more curve points
     std::vector<float> snr_coded;
     for (float snr = -8.0f; snr <= 6.0f; snr += 0.5f)
         snr_coded.push_back(snr);
 
-    // large bit count for smooth curves
     constexpr size_t NUM_BITS = 100000;
 
     std::cout << "uncoded:\n";
     auto uncoded = ber_sweep_uncoded(snr_uncoded, NUM_BITS);
 
-    std::cout << "\nhard decision Viterbi:\n";
-    auto hard = ber_sweep_coded(snr_coded, NUM_BITS, false);
+    std::cout << "\nrate 1/2 hard Viterbi:\n";
+    auto hard_half = ber_sweep_coded(snr_coded, NUM_BITS, false,
+                                      2, {0133, 0171});
 
-    std::cout << "\nsoft decision Viterbi:\n";
-    auto soft_r = ber_sweep_coded(snr_coded, NUM_BITS, true);
+    std::cout << "\nrate 1/2 soft Viterbi:\n";
+    auto soft_half = ber_sweep_coded(snr_coded, NUM_BITS, true,
+                                      2, {0133, 0171});
 
-    write_csv("../results/bpsk_uncoded_ber.csv",      uncoded);
-    write_csv("../results/bpsk_hard_viterbi_ber.csv", hard);
-    write_csv("../results/bpsk_soft_viterbi_ber.csv", soft_r);
+    std::cout << "\nrate 1/3 hard Viterbi:\n";
+    auto hard_third = ber_sweep_coded(snr_coded, NUM_BITS, false,
+                                       3, {0133, 0145, 0175});
+
+    std::cout << "\nrate 1/3 soft Viterbi:\n";
+    auto soft_third = ber_sweep_coded(snr_coded, NUM_BITS, true,
+                                       3, {0133, 0145, 0175});
+
+    write_csv("../results/bpsk_uncoded_ber.csv",         uncoded);
+    write_csv("../results/bpsk_hard_viterbi_ber.csv",    hard_half);
+    write_csv("../results/bpsk_soft_viterbi_ber.csv",    soft_half);
+    write_csv("../results/bpsk_hard_viterbi_13_ber.csv", hard_third);
+    write_csv("../results/bpsk_soft_viterbi_13_ber.csv", soft_third);
 
     std::cout << "\n[BER sweep] results written to results/\n";
     return 0;

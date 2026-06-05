@@ -101,6 +101,7 @@ add_executable(encoder_validation
     tests/ber_loopback_test.cpp
     src/fec/conv_encoder.cpp
     src/fec/viterbi_decoder.cpp
+    src/fec/interleaver.cpp
     src/modulation/modulator_base.cpp
     src/modulation/demodulator_base.cpp
     src/modulation/rrc_filter.cpp
@@ -110,7 +111,6 @@ add_executable(encoder_validation
     src/channel/awgn_channel.cpp
     src/measurement/ber_analyzer.cpp
 )
-
 target_include_directories(encoder_validation PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${LIQUID_INCLUDE_DIR}

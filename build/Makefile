@@ -274,6 +274,7 @@ src/fec/interleaver.o: src/fec/interleaver.cpp.o
 # target to build an object file
 src/fec/interleaver.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/interleaver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o
 .PHONY : src/fec/interleaver.cpp.o
 
 src/fec/interleaver.i: src/fec/interleaver.cpp.i
@@ -282,6 +283,7 @@ src/fec/interleaver.i: src/fec/interleaver.cpp.i
 # target to preprocess a source file
 src/fec/interleaver.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/interleaver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.i
 .PHONY : src/fec/interleaver.cpp.i
 
 src/fec/interleaver.s: src/fec/interleaver.cpp.s
@@ -290,6 +292,7 @@ src/fec/interleaver.s: src/fec/interleaver.cpp.s
 # target to generate assembly for a file
 src/fec/interleaver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/interleaver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.s
 .PHONY : src/fec/interleaver.cpp.s
 
 src/fec/viterbi_decoder.o: src/fec/viterbi_decoder.cpp.o
