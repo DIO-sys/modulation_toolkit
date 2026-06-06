@@ -226,5 +226,18 @@ CMakeFiles/modulation_toolkit.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/stl_numeric.h \
  /usr/include/c++/15/pstl/glue_numeric_defs.h \
  /usr/include/c++/15/pstl/execution_defs.h \
+ /home/timodagoat/code/modulation_toolkit/include/channel/multipath_channel.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/fec/conv_encoder.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/fec/viterbi_decoder.hpp \
+ /usr/include/c++/15/array /usr/include/c++/15/compare \
+ /home/timodagoat/code/modulation_toolkit/include/fec/interleaver.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/resource_grid.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/ofdm_modulator.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/ofdm_demodulator.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/channel_estimator.hpp \
  /home/timodagoat/code/modulation_toolkit/include/measurement/ber_analyzer.hpp \
- /usr/include/c++/15/iostream
+ /usr/include/c++/15/iostream /usr/include/c++/15/fstream \
+ /usr/include/c++/15/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/c++io.h \
+ /usr/include/c++/15/bits/fstream.tcc

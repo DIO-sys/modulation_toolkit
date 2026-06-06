@@ -33,6 +33,7 @@ modulation_toolkit: \
   /usr/lib/x86_64-linux-gnu/libbladeRF.so \
   /usr/lib/x86_64-linux-gnu/libliquid.so \
   /usr/lib/x86_64-linux-gnu/libSoapySDR.so \
+  /usr/lib/x86_64-linux-gnu/libfftw3f.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libpthread.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
@@ -132,6 +133,8 @@ CMakeFiles/modulation_toolkit.dir/src/measurement/evm_meter.cpp.o:
 /usr/lib/x86_64-linux-gnu/libliquid.so:
 
 /usr/lib/x86_64-linux-gnu/libSoapySDR.so:
+
+/usr/lib/x86_64-linux-gnu/libfftw3f.so:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libpthread.a:
 

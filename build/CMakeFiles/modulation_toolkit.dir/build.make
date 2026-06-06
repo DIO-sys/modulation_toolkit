@@ -531,6 +531,7 @@ modulation_toolkit: CMakeFiles/modulation_toolkit.dir/compiler_depend.ts
 modulation_toolkit: /usr/lib/x86_64-linux-gnu/libbladeRF.so
 modulation_toolkit: /usr/lib/x86_64-linux-gnu/libliquid.so
 modulation_toolkit: /usr/lib/x86_64-linux-gnu/libSoapySDR.so
+modulation_toolkit: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 modulation_toolkit: CMakeFiles/modulation_toolkit.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable modulation_toolkit"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/modulation_toolkit.dir/link.txt --verbose=$(VERBOSE)

@@ -198,10 +198,38 @@ CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/modulation/bpsk_demod.cpp -o CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.s
 
+CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/qam_mod.cpp
+CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/qam_mod.cpp
+
+CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/modulation/qam_mod.cpp > CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/modulation/qam_mod.cpp -o CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.s
+
+CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/qam_demod.cpp
+CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/qam_demod.cpp
+
+CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/modulation/qam_demod.cpp > CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/modulation/qam_demod.cpp -o CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.s
+
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o: /home/timodagoat/code/modulation_toolkit/src/modulation/mm_timing_pll.cpp
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o -MF CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/modulation/mm_timing_pll.cpp
 
 CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.i: cmake_force
@@ -212,10 +240,66 @@ CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/modulation/mm_timing_pll.cpp -o CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.s
 
+CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o: /home/timodagoat/code/modulation_toolkit/src/ofdm/resource_grid.cpp
+CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o -MF CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/ofdm/resource_grid.cpp
+
+CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/ofdm/resource_grid.cpp > CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/ofdm/resource_grid.cpp -o CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.s
+
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o: /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_modulator.cpp
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o -MF CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_modulator.cpp
+
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_modulator.cpp > CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_modulator.cpp -o CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.s
+
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o: /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_demodulator.cpp
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o -MF CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_demodulator.cpp
+
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_demodulator.cpp > CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/ofdm/ofdm_demodulator.cpp -o CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.s
+
+CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
+CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o: /home/timodagoat/code/modulation_toolkit/src/ofdm/channel_estimator.cpp
+CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o -MF CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/ofdm/channel_estimator.cpp
+
+CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/timodagoat/code/modulation_toolkit/src/ofdm/channel_estimator.cpp > CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.i
+
+CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/timodagoat/code/modulation_toolkit/src/ofdm/channel_estimator.cpp -o CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.s
+
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o: /home/timodagoat/code/modulation_toolkit/src/channel/awgn_channel.cpp
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o -MF CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/channel/awgn_channel.cpp
 
 CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.i: cmake_force
@@ -229,7 +313,7 @@ CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.s: cmake_force
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o: CMakeFiles/encoder_validation.dir/flags.make
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o: /home/timodagoat/code/modulation_toolkit/src/measurement/ber_analyzer.cpp
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o: CMakeFiles/encoder_validation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o -MF CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o.d -o CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o -c /home/timodagoat/code/modulation_toolkit/src/measurement/ber_analyzer.cpp
 
 CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.i: cmake_force
@@ -251,7 +335,13 @@ encoder_validation_OBJECTS = \
 "CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o" \
+"CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o" \
 "CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o"
 
@@ -267,14 +357,21 @@ encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/demodulator
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o
+encoder_validation: CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/channel/awgn_channel.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o
 encoder_validation: CMakeFiles/encoder_validation.dir/build.make
 encoder_validation: CMakeFiles/encoder_validation.dir/compiler_depend.ts
 encoder_validation: /usr/lib/x86_64-linux-gnu/libliquid.so
+encoder_validation: /usr/lib/x86_64-linux-gnu/libfftw3f.so
 encoder_validation: CMakeFiles/encoder_validation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable encoder_validation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/timodagoat/code/modulation_toolkit/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable encoder_validation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/encoder_validation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

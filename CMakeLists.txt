@@ -41,6 +41,16 @@ if(NOT SOAPY_INCLUDE_DIR OR NOT SOAPY_LIBRARY)
         "Install with: sudo apt install libsoapysdr-dev")
 endif()
 
+# FFTW3 (single-precision float: fftw3f)
+find_path(FFTW3_INCLUDE_DIR fftw3.h
+    HINTS /usr/include /usr/local/include)
+find_library(FFTW3_LIBRARY
+    NAMES fftw3f
+    HINTS /usr/lib /usr/local/lib)
+if(NOT FFTW3_INCLUDE_DIR OR NOT FFTW3_LIBRARY)
+    message(FATAL_ERROR "FFTW3 not found. Install with: sudo apt install libfftw3-dev")
+endif()
+
 # ─── Main executable ─────────────────────────────────────────────────────────
 
 add_executable(modulation_toolkit
@@ -86,12 +96,14 @@ target_include_directories(modulation_toolkit PRIVATE
     ${BLADERF_INCLUDE_DIR}
     ${LIQUID_INCLUDE_DIR}
     ${SOAPY_INCLUDE_DIR}
+    ${FFTW3_INCLUDE_DIR}
 )
 
 target_link_libraries(modulation_toolkit PRIVATE
     ${BLADERF_LIBRARY}
     ${LIQUID_LIBRARY}
     ${SOAPY_LIBRARY}
+    ${FFTW3_LIBRARY}
     pthread
 )
 
@@ -99,25 +111,38 @@ target_link_libraries(modulation_toolkit PRIVATE
 
 add_executable(encoder_validation
     tests/ber_loopback_test.cpp
+
     src/fec/conv_encoder.cpp
     src/fec/viterbi_decoder.cpp
     src/fec/interleaver.cpp
+
     src/modulation/modulator_base.cpp
     src/modulation/demodulator_base.cpp
     src/modulation/rrc_filter.cpp
     src/modulation/bpsk_mod.cpp
     src/modulation/bpsk_demod.cpp
+    src/modulation/qam_mod.cpp
+    src/modulation/qam_demod.cpp
     src/modulation/mm_timing_pll.cpp
+
+    src/ofdm/resource_grid.cpp
+    src/ofdm/ofdm_modulator.cpp
+    src/ofdm/ofdm_demodulator.cpp
+    src/ofdm/channel_estimator.cpp
+
     src/channel/awgn_channel.cpp
     src/measurement/ber_analyzer.cpp
 )
+
 target_include_directories(encoder_validation PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${LIQUID_INCLUDE_DIR}
+    ${FFTW3_INCLUDE_DIR}
 )
 
 target_link_libraries(encoder_validation PRIVATE
     ${LIQUID_LIBRARY}
+    ${FFTW3_LIBRARY}
     pthread
 )
 

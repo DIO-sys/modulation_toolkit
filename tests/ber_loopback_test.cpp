@@ -4,6 +4,11 @@
 #include "channel/awgn_channel.hpp"
 #include "modulation/bpsk_mod.hpp"
 #include "modulation/bpsk_demod.hpp"
+#include "modulation/qam_mod.hpp"
+#include "modulation/qam_demod.hpp"
+#include "ofdm/resource_grid.hpp"
+#include "ofdm/ofdm_modulator.hpp"
+#include "ofdm/ofdm_demodulator.hpp"
 #include "measurement/ber_analyzer.hpp"
 #include <liquid/liquid.h>
 #include <iostream>
@@ -30,7 +35,6 @@ float measure_power(const std::vector<std::complex<float>>& samples) {
     return power / static_cast<float>(samples.size());
 }
 
-// deinterleave LLR floats using same index mapping as bit deinterleave
 std::vector<float> deinterleave_llrs(const std::vector<float>& llrs,
                                       int rows, int cols)
 {
@@ -145,6 +149,52 @@ bool validate_viterbi_soft(const std::vector<uint8_t>& bits) {
     return false;
 }
 
+// ─── OFDM noiseless loopback validation ──────────────────────────────────
+
+bool validate_ofdm_loopback() {
+    constexpr int NUM_SC       = 64;
+    constexpr int CP_LEN       = 16;
+    constexpr int NUM_SYM      = 14;
+    constexpr int PILOT_SP     = 4;
+    constexpr int PILOT_PERIOD = 2;
+
+    ResourceGrid    grid(NUM_SC, NUM_SYM, PILOT_SP, PILOT_PERIOD);
+    OFDMModulator   mod(NUM_SC, CP_LEN, grid);
+    OFDMDemodulator demod(NUM_SC, CP_LEN, grid);
+
+    // generate known QAM symbols — all +1+0j for simplicity
+    int num_data = grid.total_data_symbols();
+    std::vector<std::complex<float>> tx_syms(num_data, {1.0f, 0.0f});
+
+    // TX: map to grid, IFFT, add CP
+    auto tx_samples = mod.modulate(tx_syms);
+
+    // RX: strip CP, FFT, channel estimate, equalize, unmap
+    auto rx_syms = demod.demodulate(tx_samples);
+
+    // check symbols match
+    int mismatches = 0;
+    size_t n = std::min(tx_syms.size(), rx_syms.size());
+    for (size_t i = 0; i < n; ++i) {
+        float err = std::abs(tx_syms[i] - rx_syms[i]);
+        if (err > 0.01f) {
+            if (++mismatches <= 5)
+                std::printf("  sym[%zu]: tx=(%.3f,%.3f) rx=(%.3f,%.3f) err=%.4f\n",
+                            i,
+                            tx_syms[i].real(), tx_syms[i].imag(),
+                            rx_syms[i].real(), rx_syms[i].imag(), err);
+        }
+    }
+
+    if (mismatches == 0) {
+        std::printf("  [PASS] OFDM noiseless loopback: %zu symbols match\n", n);
+        return true;
+    }
+    std::printf("  [FAIL] OFDM noiseless loopback: %d mismatches in %zu symbols\n",
+                mismatches, n);
+    return false;
+}
+
 // ─── BER sweep ───────────────────────────────────────────────────────────
 
 struct BERPoint { float snr; float ber; };
@@ -195,10 +245,7 @@ std::vector<BERPoint> ber_sweep_coded(const std::vector<float>& snr_points,
         auto tx_bits     = random_bits(num_bits);
         auto coded       = enc.encode(tx_bits);
         auto interleaved = il.interleave(coded);
-
-        // record interleaved size — demod output must match this
         size_t il_size   = interleaved.size();
-
         auto tx_samples  = mod.modulate(interleaved);
 
         AWGNChannel ch(snr_db);
@@ -208,37 +255,25 @@ std::vector<BERPoint> ber_sweep_coded(const std::vector<float>& snr_points,
         std::vector<uint8_t> decoded;
         if (soft) {
             auto llrs = demod.demodulate_soft(rx_samples);
-
-            // trim LLRs to interleaved size before deinterleaving
             if (llrs.size() > il_size) llrs.resize(il_size);
             while (llrs.size() < il_size) llrs.push_back(0.0f);
-
-            // deinterleave only full blocks
-            size_t safe_len = (llrs.size() / (IL_ROWS * IL_COLS))
-                              * (IL_ROWS * IL_COLS);
-            llrs.resize(safe_len);
-
+            size_t safe = (llrs.size() / (IL_ROWS * IL_COLS)) * (IL_ROWS * IL_COLS);
+            llrs.resize(safe);
             auto llrs_dint = deinterleave_llrs(llrs, IL_ROWS, IL_COLS);
             decoded        = dec.decode_soft(llrs_dint);
         } else {
             auto rx_coded = demod.demodulate(rx_samples);
-
-            // trim to interleaved size
             if (rx_coded.size() > il_size) rx_coded.resize(il_size);
             while (rx_coded.size() < il_size) rx_coded.push_back(0);
-
             auto dint = il.deinterleave(rx_coded);
             decoded   = dec.decode_hard(dint);
         }
 
-        // trim tx_bits to decoded length
-        size_t compare_len = std::min(tx_bits.size(), decoded.size());
-        std::vector<uint8_t> tx_trimmed(tx_bits.begin(),
-                                         tx_bits.begin() + compare_len);
-        std::vector<uint8_t> rx_trimmed(decoded.begin(),
-                                         decoded.begin() + compare_len);
+        size_t cmp = std::min(tx_bits.size(), decoded.size());
+        std::vector<uint8_t> tx_trim(tx_bits.begin(), tx_bits.begin() + cmp);
+        std::vector<uint8_t> rx_trim(decoded.begin(), decoded.begin() + cmp);
 
-        float ber = BERAnalyzer::compute_ber(tx_trimmed, rx_trimmed);
+        float ber = BERAnalyzer::compute_ber(tx_trim, rx_trim);
         results.push_back({snr_db, ber});
         std::printf("  [%-8s] SNR %5.1f dB | BER %.6f\n",
                     soft ? "soft" : "hard", snr_db, ber);
@@ -269,7 +304,10 @@ int main() {
     bool v1 = validate_viterbi_hard(bits_1000);
     bool v2 = validate_viterbi_soft(bits_1000);
 
-    bool all_passed = e1 && e2 && v1 && v2;
+    std::cout << "\n[validation] OFDM noiseless loopback\n";
+    bool o1 = validate_ofdm_loopback();
+
+    bool all_passed = e1 && e2 && v1 && v2 && o1;
     std::cout << "\n[validation] "
               << (all_passed ? "ALL PASSED" : "FAILURES DETECTED") << "\n";
 

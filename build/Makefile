@@ -634,6 +634,7 @@ src/modulation/qam_demod.o: src/modulation/qam_demod.cpp.o
 # target to build an object file
 src/modulation/qam_demod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_demod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o
 .PHONY : src/modulation/qam_demod.cpp.o
 
 src/modulation/qam_demod.i: src/modulation/qam_demod.cpp.i
@@ -642,6 +643,7 @@ src/modulation/qam_demod.i: src/modulation/qam_demod.cpp.i
 # target to preprocess a source file
 src/modulation/qam_demod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_demod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.i
 .PHONY : src/modulation/qam_demod.cpp.i
 
 src/modulation/qam_demod.s: src/modulation/qam_demod.cpp.s
@@ -650,6 +652,7 @@ src/modulation/qam_demod.s: src/modulation/qam_demod.cpp.s
 # target to generate assembly for a file
 src/modulation/qam_demod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_demod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.s
 .PHONY : src/modulation/qam_demod.cpp.s
 
 src/modulation/qam_mod.o: src/modulation/qam_mod.cpp.o
@@ -658,6 +661,7 @@ src/modulation/qam_mod.o: src/modulation/qam_mod.cpp.o
 # target to build an object file
 src/modulation/qam_mod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_mod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o
 .PHONY : src/modulation/qam_mod.cpp.o
 
 src/modulation/qam_mod.i: src/modulation/qam_mod.cpp.i
@@ -666,6 +670,7 @@ src/modulation/qam_mod.i: src/modulation/qam_mod.cpp.i
 # target to preprocess a source file
 src/modulation/qam_mod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_mod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.i
 .PHONY : src/modulation/qam_mod.cpp.i
 
 src/modulation/qam_mod.s: src/modulation/qam_mod.cpp.s
@@ -674,6 +679,7 @@ src/modulation/qam_mod.s: src/modulation/qam_mod.cpp.s
 # target to generate assembly for a file
 src/modulation/qam_mod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_mod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.s
 .PHONY : src/modulation/qam_mod.cpp.s
 
 src/modulation/qpsk_demod.o: src/modulation/qpsk_demod.cpp.o
@@ -757,6 +763,7 @@ src/ofdm/channel_estimator.o: src/ofdm/channel_estimator.cpp.o
 # target to build an object file
 src/ofdm/channel_estimator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/channel_estimator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o
 .PHONY : src/ofdm/channel_estimator.cpp.o
 
 src/ofdm/channel_estimator.i: src/ofdm/channel_estimator.cpp.i
@@ -765,6 +772,7 @@ src/ofdm/channel_estimator.i: src/ofdm/channel_estimator.cpp.i
 # target to preprocess a source file
 src/ofdm/channel_estimator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/channel_estimator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.i
 .PHONY : src/ofdm/channel_estimator.cpp.i
 
 src/ofdm/channel_estimator.s: src/ofdm/channel_estimator.cpp.s
@@ -773,6 +781,7 @@ src/ofdm/channel_estimator.s: src/ofdm/channel_estimator.cpp.s
 # target to generate assembly for a file
 src/ofdm/channel_estimator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/channel_estimator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.s
 .PHONY : src/ofdm/channel_estimator.cpp.s
 
 src/ofdm/ofdm_demodulator.o: src/ofdm/ofdm_demodulator.cpp.o
@@ -781,6 +790,7 @@ src/ofdm/ofdm_demodulator.o: src/ofdm/ofdm_demodulator.cpp.o
 # target to build an object file
 src/ofdm/ofdm_demodulator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_demodulator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o
 .PHONY : src/ofdm/ofdm_demodulator.cpp.o
 
 src/ofdm/ofdm_demodulator.i: src/ofdm/ofdm_demodulator.cpp.i
@@ -789,6 +799,7 @@ src/ofdm/ofdm_demodulator.i: src/ofdm/ofdm_demodulator.cpp.i
 # target to preprocess a source file
 src/ofdm/ofdm_demodulator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_demodulator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.i
 .PHONY : src/ofdm/ofdm_demodulator.cpp.i
 
 src/ofdm/ofdm_demodulator.s: src/ofdm/ofdm_demodulator.cpp.s
@@ -797,6 +808,7 @@ src/ofdm/ofdm_demodulator.s: src/ofdm/ofdm_demodulator.cpp.s
 # target to generate assembly for a file
 src/ofdm/ofdm_demodulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_demodulator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.s
 .PHONY : src/ofdm/ofdm_demodulator.cpp.s
 
 src/ofdm/ofdm_modulator.o: src/ofdm/ofdm_modulator.cpp.o
@@ -805,6 +817,7 @@ src/ofdm/ofdm_modulator.o: src/ofdm/ofdm_modulator.cpp.o
 # target to build an object file
 src/ofdm/ofdm_modulator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_modulator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o
 .PHONY : src/ofdm/ofdm_modulator.cpp.o
 
 src/ofdm/ofdm_modulator.i: src/ofdm/ofdm_modulator.cpp.i
@@ -813,6 +826,7 @@ src/ofdm/ofdm_modulator.i: src/ofdm/ofdm_modulator.cpp.i
 # target to preprocess a source file
 src/ofdm/ofdm_modulator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_modulator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.i
 .PHONY : src/ofdm/ofdm_modulator.cpp.i
 
 src/ofdm/ofdm_modulator.s: src/ofdm/ofdm_modulator.cpp.s
@@ -821,6 +835,7 @@ src/ofdm/ofdm_modulator.s: src/ofdm/ofdm_modulator.cpp.s
 # target to generate assembly for a file
 src/ofdm/ofdm_modulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_modulator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.s
 .PHONY : src/ofdm/ofdm_modulator.cpp.s
 
 src/ofdm/resource_grid.o: src/ofdm/resource_grid.cpp.o
@@ -829,6 +844,7 @@ src/ofdm/resource_grid.o: src/ofdm/resource_grid.cpp.o
 # target to build an object file
 src/ofdm/resource_grid.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o
 .PHONY : src/ofdm/resource_grid.cpp.o
 
 src/ofdm/resource_grid.i: src/ofdm/resource_grid.cpp.i
@@ -837,6 +853,7 @@ src/ofdm/resource_grid.i: src/ofdm/resource_grid.cpp.i
 # target to preprocess a source file
 src/ofdm/resource_grid.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.i
 .PHONY : src/ofdm/resource_grid.cpp.i
 
 src/ofdm/resource_grid.s: src/ofdm/resource_grid.cpp.s
@@ -845,6 +862,7 @@ src/ofdm/resource_grid.s: src/ofdm/resource_grid.cpp.s
 # target to generate assembly for a file
 src/ofdm/resource_grid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.s
 .PHONY : src/ofdm/resource_grid.cpp.s
 
 tests/ber_loopback_test.o: tests/ber_loopback_test.cpp.o

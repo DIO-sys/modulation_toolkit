@@ -225,6 +225,12 @@ CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.o: \
  /home/timodagoat/code/modulation_toolkit/include/modulation/bpsk_demod.hpp \
  /home/timodagoat/code/modulation_toolkit/include/modulation/demodulator_base.hpp \
  /home/timodagoat/code/modulation_toolkit/include/modulation/mm_timing_pll.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/qam_mod.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/modulation/qam_demod.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/resource_grid.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/ofdm_modulator.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/ofdm_demodulator.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/ofdm/channel_estimator.hpp \
  /home/timodagoat/code/modulation_toolkit/include/measurement/ber_analyzer.hpp \
  /usr/include/liquid/liquid.h /usr/include/inttypes.h \
  /usr/include/c++/15/iostream /usr/include/c++/15/fstream \
