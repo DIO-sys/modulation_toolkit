@@ -1,0 +1,42 @@
+# build
+build/
+cmake-install/
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+Makefile
+*.make
+
+# compiled objects
+*.o
+*.d
+*.a
+*.so
+*.dylib
+
+# binaries
+modulation_toolkit
+encoder_validation
+bladerf_loopback
+
+# FPGA bitstream
+*.rbf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# results — keep CSVs, ignore PNGs (regenerate from plots)
+results/*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# logs
+*.log
