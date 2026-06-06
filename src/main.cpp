@@ -201,6 +201,13 @@ run_ofdm_ber_sweep(const std::string& label,
 // ─── C-V2X PC5 sidelink demo ─────────────────────────────────────────────
 
 void run_cv2x_demo() {
+    // ANSI codes
+    constexpr auto BOLD    = "\033[1m";
+    constexpr auto GREEN   = "\033[32m";
+    constexpr auto CYAN    = "\033[36m";
+    constexpr auto RESET   = "\033[0m";
+    constexpr auto DIM     = "\033[2m";
+
     constexpr int   NUM_SC       = 64;
     constexpr int   CP_LEN       = 16;
     constexpr int   NUM_SYM      = 14;
@@ -209,10 +216,14 @@ void run_cv2x_demo() {
     constexpr float INV_SQRT2    = 0.70710678118f;
     constexpr float SNR_DB       = 6.0f;
 
-    std::cout << "\n[C-V2X] PC5 sidelink demo\n";
-    std::cout << std::string(52, '-') << "\n\n";
+    std::cout << "\n"
+              << BOLD << CYAN
+              << "  ╔══════════════════════════════════════════════════════╗\n"
+              << "  ║           C-V2X PC5 SIDELINK DEMO                   ║\n"
+              << "  ╚══════════════════════════════════════════════════════╝\n"
+              << RESET << "\n";
 
-    // ── construct BSM — vehicle on Pennsylvania Ave NW
+    // ── construct BSM
     BSM tx_bsm;
     tx_bsm.vehicle_id   = 0xDEADBEEF;
     tx_bsm.latitude     = static_cast<int32_t>( 38.8977 * 1e7);
@@ -221,7 +232,7 @@ void run_cv2x_demo() {
     tx_bsm.heading      = static_cast<uint16_t>(90.0f / 0.0125f);
     tx_bsm.brake_status = 0x00;
 
-    // ── SCI format 1 — priority 3, MCS 5, broadcast
+    // ── SCI format 1
     SCI sci;
     sci.priority          = 3;
     sci.resource_interval = 2;
@@ -230,27 +241,39 @@ void run_cv2x_demo() {
     sci.resource_block    = 0;
     sci.group_dst_id      = 0xFF;
 
-    std::cout << "[C-V2X] TX BSM: " << tx_bsm.to_string() << "\n";
-    std::cout << "[C-V2X] TX SCI: " << sci.to_string()    << "\n\n";
+    // ── TX summary
+    std::printf("  %sTRANSMIT%s\n", BOLD, RESET);
+    std::printf("  %s%-14s%s 0x%08X\n",       CYAN, "Vehicle ID",  RESET, tx_bsm.vehicle_id);
+    std::printf("  %s%-14s%s %.6f° N\n",       CYAN, "Latitude",    RESET, tx_bsm.latitude  / 1e7);
+    std::printf("  %s%-14s%s %.6f° W\n",       CYAN, "Longitude",   RESET, std::abs(tx_bsm.longitude / 1e7));
+    std::printf("  %s%-14s%s %.2f mph\n",       CYAN, "Speed",       RESET, tx_bsm.speed_cms / 44.704f);
+    std::printf("  %s%-14s%s %.2f° (East)\n",   CYAN, "Heading",     RESET, tx_bsm.heading * 0.0125f);
+    std::printf("  %s%-14s%s Not engaged\n",    CYAN, "Brakes",      RESET);
+    std::printf("  %s%-14s%s priority=%d  mcs=%d  dst=0x%02X\n",
+                CYAN, "SCI", RESET, sci.priority, sci.mcs, sci.group_dst_id);
+    std::printf("\n");
 
-    // ── encode BSM into PC5 frame (serialize + FEC)
+    // ── encode
     auto frame = PC5Frame::encode(tx_bsm, sci);
-    std::printf("[C-V2X] encoded %zu payload bits (rate 1/2 FEC)\n\n",
-                frame.payload_bits.size());
+    std::printf("  %sCHANNEL%s\n", BOLD, RESET);
+    std::printf("  %s%-14s%s rate 1/2 K=7 → %zu coded bits\n",
+                DIM, "FEC",     RESET, frame.payload_bits.size());
+    std::printf("  %s%-14s%s QPSK over OFDM (64 subcarriers, CP=16)\n",
+                DIM, "Mapping", RESET);
+    std::printf("  %s%-14s%s AWGN %.1f dB SNR\n",
+                DIM, "Channel", RESET, SNR_DB);
+    std::printf("\n");
 
-    // ── map payload bits through OFDM chain
+    // ── OFDM chain
     ResourceGrid    grid(NUM_SC, NUM_SYM, PILOT_SP, PILOT_PERIOD);
     OFDMModulator   ofdm_mod(NUM_SC, CP_LEN, grid);
     OFDMDemodulator ofdm_demod(NUM_SC, CP_LEN, grid);
 
     int data_per_frame = grid.total_data_symbols() * 2;
-
-    // pad to frame boundary
     auto bits = frame.payload_bits;
     while (static_cast<int>(bits.size()) % data_per_frame != 0)
         bits.push_back(0);
 
-    // QPSK map
     std::vector<std::complex<float>> syms;
     syms.reserve(bits.size() / 2);
     for (size_t i = 0; i + 1 < bits.size(); i += 2) {
@@ -259,56 +282,65 @@ void run_cv2x_demo() {
         syms.push_back({re, im});
     }
 
-    // OFDM modulate
     auto tx_samples = ofdm_mod.modulate(syms);
 
-    // AWGN channel at SNR_DB
     AWGNChannel ch(SNR_DB);
     ch.set_signal_power(measure_power(tx_samples));
     auto rx_samples = ch.apply(tx_samples);
 
-    std::printf("[C-V2X] channel: AWGN %.1f dB SNR\n\n", SNR_DB);
-
-    // OFDM demodulate
     auto rx_syms = ofdm_demod.demodulate(rx_samples);
 
-    // QPSK hard demap
     std::vector<uint8_t> rx_bits;
     rx_bits.reserve(rx_syms.size() * 2);
     for (const auto& s : rx_syms) {
         rx_bits.push_back(s.real() >= 0.0f ? 0 : 1);
         rx_bits.push_back(s.imag() >= 0.0f ? 0 : 1);
     }
-
-    // trim to original payload size
     rx_bits.resize(frame.payload_bits.size());
     frame.payload_bits = rx_bits;
 
-    // ── decode PC5 frame back to BSM
+    // ── decode
     auto rx_bsm = PC5Frame::decode(frame);
 
-    std::cout << "[C-V2X] RX BSM: " << rx_bsm.to_string() << "\n\n";
+    // ── receive summary
+    std::printf("  %sRECEIVE%s\n", BOLD, RESET);
+    std::printf("  %s%-14s%s 0x%08X\n",       CYAN, "Vehicle ID",  RESET, rx_bsm.vehicle_id);
+    std::printf("  %s%-14s%s %.6f° N\n",       CYAN, "Latitude",    RESET, rx_bsm.latitude  / 1e7);
+    std::printf("  %s%-14s%s %.6f° W\n",       CYAN, "Longitude",   RESET, std::abs(rx_bsm.longitude / 1e7));
+    std::printf("  %s%-14s%s %.2f mph\n",       CYAN, "Speed",       RESET, rx_bsm.speed_cms / 44.704f);
+    std::printf("  %s%-14s%s %.2f° (East)\n",   CYAN, "Heading",     RESET, rx_bsm.heading * 0.0125f);
+    std::printf("  %s%-14s%s Not engaged\n\n",  CYAN, "Brakes",      RESET);
 
-    // ── verify
+    // ── field verification
     bool id_ok  = (tx_bsm.vehicle_id == rx_bsm.vehicle_id);
     bool lat_ok = (tx_bsm.latitude   == rx_bsm.latitude);
     bool lon_ok = (tx_bsm.longitude  == rx_bsm.longitude);
     bool spd_ok = (tx_bsm.speed_cms  == rx_bsm.speed_cms);
     bool hdg_ok = (tx_bsm.heading    == rx_bsm.heading);
 
-    std::printf("  vehicle_id : %s\n", id_ok  ? "PASS" : "FAIL");
-    std::printf("  latitude   : %s\n", lat_ok ? "PASS" : "FAIL");
-    std::printf("  longitude  : %s\n", lon_ok ? "PASS" : "FAIL");
-    std::printf("  speed      : %s\n", spd_ok ? "PASS" : "FAIL");
-    std::printf("  heading    : %s\n", hdg_ok ? "PASS" : "FAIL");
+    auto check = [&](const char* label, bool ok) {
+        std::printf("  %s%-14s%s %s%s%s\n",
+                    CYAN, label, RESET,
+                    ok ? GREEN : "\033[31m",
+                    ok ? "✓  PASS" : "✗  FAIL",
+                    RESET);
+    };
+
+    std::printf("  %sVERIFICATION%s\n", BOLD, RESET);
+    check("Vehicle ID",  id_ok);
+    check("Latitude",    lat_ok);
+    check("Longitude",   lon_ok);
+    check("Speed",       spd_ok);
+    check("Heading",     hdg_ok);
 
     bool all_ok = id_ok && lat_ok && lon_ok && spd_ok && hdg_ok;
-    std::cout << "\n[C-V2X] "
-              << (all_ok ? "ALL FIELDS DECODED CORRECTLY"
-                         : "DECODE FAILURES DETECTED")
-              << "\n";
+    std::printf("\n  %s%s  %s%s\n\n",
+                BOLD,
+                all_ok ? GREEN : "\033[31m",
+                all_ok ? "ALL FIELDS DECODED CORRECTLY"
+                       : "DECODE FAILURES DETECTED",
+                RESET);
 }
-
 // ─── main ─────────────────────────────────────────────────────────────────
 
 int main() {
