@@ -62,7 +62,7 @@ The `CircularBuffer` is a lock-free SPSC ring buffer with power-of-two capacity.
 
 The TX buffer is padded to a multiple of `TRANSFER_SAMPLES=4096` by repeating the frame rather than zero-padding. Zero-padding creates silence gaps between frames. The RX collects samples during the gap and the demodulator receives a constant DC level instead of the modulated signal. Repeating the frame eliminates the gap while keeping the buffer a valid multiple of the USB transfer size. This was found by printing the raw RX sample amplitudes and seeing 20 consecutive identical values.
 
-Hardware BER validation confirmed 14 dB SNR above the noise floor through the RF cable loopback between TX1 and RX1. Full BER curves were not collected. The AD9361 introduces a carrier frequency offset between TX and RX even at the same nominal frequency setting. Without a carrier recovery loop the received constellation rotates continuously and coherent demodulation is not possible. A PLL-based carrier frequency offset estimator is the remaining component for hardware BER validation. The infrastructure for hardware streaming is complete and verified.
+Hardware BER validation confirmed 14 dB SNR above the noise floor through the RF cable loopback between TX1 and RX1. Full BER curves were not collected and the next step for this project. The AD9361 introduces a carrier frequency offset between TX and RX even at the same nominal frequency setting. Without a carrier recovery loop the received constellation rotates continuously and coherent demodulation is not possible. A PLL-based carrier frequency offset estimator is the remaining component for hardware BER validation. The infrastructure for hardware streaming is complete and verified.
 
 ---
 
