@@ -2,7 +2,7 @@
 
 The spectrum analyzer showed what was in the air. This project answers what it means.
 
-A persistent carrier at 915 MHz is just a spike on a waterfall until you understand the machinery underneath it — the bits mapped to phase shifts, the redundancy woven in to survive a noisy channel, the subcarriers spread across frequency so a single reflection can't wipe the message. This project builds that machinery from scratch: a full digital communications stack in C++17 on the same BladeRF 2.0 Micro xA4, going from raw bits to RF and back. The same chain inside every LTE base station, every satellite downlink, every tactical datalink.
+A persistent carrier at 915 MHz is just a spike on a waterfall but now we can actually control where those waterfall spikes go and the information that they communicate. This project builds that machinery from scratch: a full digital communications stack in C++17 on the same BladeRF 2.0 Micro xA4, going from raw bits to RF and back. The same chain inside every LTE base station, every satellite downlink, every tactical datalink.
 
 ---
 
@@ -39,23 +39,46 @@ Eight phases from first principles to hardware:
 ---
 
 ## C-V2X Demo
-[C-V2X] TX BSM: vehicle_id=0xDEADBEEF  lat=38.897700  lon=-77.036500
-speed=14.987473 mph  heading=90.000000 deg  brakes=0x0
-[C-V2X] TX SCI: priority=3  mcs=5  retx=0  rb=0  dst=0xff
-[C-V2X] encoded 284 payload bits (rate 1/2 FEC)
-[C-V2X] channel: AWGN 6.0 dB SNR
-[C-V2X] RX BSM: vehicle_id=0xDEADBEEF  lat=38.897700  lon=-77.036500
-speed=14.987473 mph  heading=90.000000 deg  brakes=0x0
-vehicle_id : PASS
-latitude   : PASS
-longitude  : PASS
-speed      : PASS
-heading    : PASS
-[C-V2X] ALL FIELDS DECODED CORRECTLY
+
+```
+  ╔══════════════════════════════════════════════════════╗
+  ║           C-V2X PC5 SIDELINK DEMO                   ║
+  ╚══════════════════════════════════════════════════════╝
+
+  TRANSMIT
+  Vehicle ID     0xDEADBEEF
+  Latitude       38.897700° N
+  Longitude      77.036500° W
+  Speed          14.99 mph
+  Heading        90.00° (East)
+  Brakes         Not engaged
+  SCI            priority=3  mcs=5  dst=0xFF
+
+  CHANNEL
+  FEC            rate 1/2 K=7 → 284 coded bits
+  Mapping        QPSK over OFDM (64 subcarriers, CP=16)
+  Channel        AWGN 6.0 dB SNR
+
+  RECEIVE
+  Vehicle ID     0xDEADBEEF
+  Latitude       38.897700° N
+  Longitude      77.036500° W
+  Speed          14.99 mph
+  Heading        90.00° (East)
+  Brakes         Not engaged
+
+  VERIFICATION
+  Vehicle ID     ✓  PASS
+  Latitude       ✓  PASS
+  Longitude      ✓  PASS
+  Speed          ✓  PASS
+  Heading        ✓  PASS
+
+    ALL FIELDS DECODED CORRECTLY
+```
 
 BSM serialized → rate 1/2 FEC encoded → QPSK mapped → OFDM modulated →
 AWGN channel → OFDM demodulated → Viterbi decoded → BSM deserialized.
-
 ---
 
 ## Key Numbers
@@ -151,24 +174,6 @@ python3 ofdm_multipath_plot.py
 
 ---
 
-## Project Structure
-modulation_toolkit/
-├── include/
-│   ├── modulation/      # BPSK, QPSK, QAM, RRC, PLL
-│   ├── fec/             # convolutional encoder, Viterbi, interleaver
-│   ├── ofdm/            # resource grid, modulator, demodulator, channel estimator
-│   ├── channel/         # AWGN, multipath
-│   ├── cv2x/            # BSM, SCI, PC5 frame
-│   ├── hw/              # BladeRF device, circular buffer, app state
-│   └── measurement/     # BER analyzer, EVM meter
-├── src/                 # mirrors include/
-├── tests/
-│   ├── ber_loopback_test.cpp     # software validation suite
-│   └── bladerf_loopback_test.cpp # hardware BER sweep
-├── python/              # BER and OFDM plots
-└── results/             # CSV output and figures
-
----
 
 ## Tools and Libraries
 
@@ -196,4 +201,4 @@ modulation_toolkit/
 
 ## Related
 
-- [spectrum_analyzer](https://github.com/timodagoat/spectrum_analyzer) — the project that started this. Passive RF observation at 40 MSPS on the same hardware. Built to understand what was in the air. This project builds what puts meaning into it.Sonnet 4.6 LowClaude is AI and can make mistakes. Please double-check responses.
+- [spectrum_analyzer](https://github.com/timodagoat/spectrum_analyzer) — the project that started this. Passive RF observation at 40 MSPS on the same hardware. Built to understand what was in the air. This project builds what puts meaning into it.
