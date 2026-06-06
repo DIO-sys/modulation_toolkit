@@ -201,7 +201,7 @@ python3 ofdm_multipath_plot.py
 
 ## Related
 
-- [spectrum_analyzer](https://github.com/timodagoat/spectrum_analyzer) — the project that started this. Passive RF observation at 40 MSPS on the same hardware. Built to understand what was in the air. This project builds what puts meaning into it.
+- [spectrum_analyzer](https://github.com/DIO-sys/spectrum_analyzer) — the project that started this. Passive RF observation at 40 MSPS on the same hardware. Built to understand what was in the air. This project builds what puts meaning into it.
 
 
 ---
