@@ -107,7 +107,7 @@ target_link_libraries(modulation_toolkit PRIVATE
     pthread
 )
 
-# ─── Test executable ─────────────────────────────────────────────────────────
+# ─── Software validation test ────────────────────────────────────────────────
 
 add_executable(encoder_validation
     tests/ber_loopback_test.cpp
@@ -146,6 +146,50 @@ target_link_libraries(encoder_validation PRIVATE
     pthread
 )
 
+# ─── Hardware loopback test ───────────────────────────────────────────────────
+
+add_executable(bladerf_loopback
+    tests/bladerf_loopback_test.cpp
+
+    src/hw/circular_buffer.cpp
+    src/hw/bladerf_device.cpp
+
+    src/modulation/modulator_base.cpp
+    src/modulation/demodulator_base.cpp
+    src/modulation/rrc_filter.cpp
+    src/modulation/bpsk_mod.cpp
+    src/modulation/bpsk_demod.cpp
+    src/modulation/qpsk_mod.cpp
+    src/modulation/qpsk_demod.cpp
+    src/modulation/qam_mod.cpp
+    src/modulation/qam_demod.cpp
+    src/modulation/mm_timing_pll.cpp
+
+    src/fec/conv_encoder.cpp
+    src/fec/viterbi_decoder.cpp
+    src/fec/interleaver.cpp
+
+    src/ofdm/resource_grid.cpp
+    src/ofdm/ofdm_modulator.cpp
+    src/ofdm/ofdm_demodulator.cpp
+    src/ofdm/channel_estimator.cpp
+
+    src/measurement/ber_analyzer.cpp
+    src/measurement/evm_meter.cpp
+)
+
+target_include_directories(bladerf_loopback PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+    ${BLADERF_INCLUDE_DIR}
+    ${FFTW3_INCLUDE_DIR}
+)
+
+target_link_libraries(bladerf_loopback PRIVATE
+    ${BLADERF_LIBRARY}
+    ${FFTW3_LIBRARY}
+    pthread
+)
+
 # ─── Build type defaults ─────────────────────────────────────────────────────
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -162,6 +206,13 @@ target_compile_options(modulation_toolkit PRIVATE
 )
 
 target_compile_options(encoder_validation PRIVATE
+    -Wall -Wextra -march=native
+    $<$<CONFIG:Release>:-O2>
+    $<$<CONFIG:Debug>:-O0>
+    $<$<CONFIG:Debug>:-g3>
+)
+
+target_compile_options(bladerf_loopback PRIVATE
     -Wall -Wextra -march=native
     $<$<CONFIG:Release>:-O2>
     $<$<CONFIG:Debug>:-O0>

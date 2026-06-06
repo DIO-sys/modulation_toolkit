@@ -11,21 +11,22 @@ BladeRFDevice::BladeRFDevice(CircularBuffer<complex<float>>& rx_buf, AppState& s
 {}
 
 BladeRFDevice::~BladeRFDevice() {
+    stop_tx_stream();
+    stop_rx_stream();
     close();
 }
 
 bool BladeRFDevice::open() {
     int status = bladerf_open(&dev_, nullptr);
-    if (status != 0) {
-        log_error("bladerf_open", status);
-        return false;
-    }
+    if (status != 0) { log_error("bladerf_open", status); return false; }
     cout << "[bladerf] device opened\n";
     return true;
 }
 
 bool BladeRFDevice::configure() {
-    return configure_rx() && configure_tx();
+    if (!configure_rx() || !configure_tx()) return false;
+    // RF cable loopback between TX1 and RX1 — no firmware loopback
+    return true;
 }
 
 bool BladeRFDevice::configure_rx() {
@@ -55,7 +56,6 @@ bool BladeRFDevice::configure_rx() {
                                  32, TRANSFER_SAMPLES, 4, 5000);
     if (status != 0) { log_error("sync_config RX", status); return false; }
 
-    // DC offset correction — same as spectrum_analyzer
     bladerf_set_correction(dev_, BLADERF_CHANNEL_RX(0), BLADERF_CORR_DCOFF_I, 0);
     bladerf_set_correction(dev_, BLADERF_CHANNEL_RX(0), BLADERF_CORR_DCOFF_Q, 0);
 
@@ -114,14 +114,12 @@ void BladeRFDevice::receive() {
                                  nullptr, 5000);
     if (status != 0) {
         log_error("bladerf_sync_rx", status);
-        state_.running.store(false);
         return;
     }
     scale_and_push(rx_raw_buf_.data(), TRANSFER_SAMPLES);
 }
 
 void BladeRFDevice::transmit(const complex<float>* buf, size_t count) {
-    // normalize float [-1,1] back to SC16_Q11 range [-2048, 2047]
     for (size_t i = 0; i < count; ++i) {
         tx_raw_buf_[i * 2]     = static_cast<int16_t>(buf[i].real() * 2047.0f);
         tx_raw_buf_[i * 2 + 1] = static_cast<int16_t>(buf[i].imag() * 2047.0f);
@@ -129,11 +127,82 @@ void BladeRFDevice::transmit(const complex<float>* buf, size_t count) {
     int status = bladerf_sync_tx(dev_, tx_raw_buf_.data(),
                                  static_cast<unsigned int>(count),
                                  nullptr, 5000);
-    if (status != 0) {
+    if (status != 0)
         log_error("bladerf_sync_tx", status);
-        state_.running.store(false);
+}
+
+// ─── streaming TX ─────────────────────────────────────────────────────────
+
+void BladeRFDevice::start_tx_stream(const std::vector<std::complex<float>>& tx_buf) {
+    tx_running_.store(true);
+    tx_thread_ = std::thread(&BladeRFDevice::tx_thread_fn, this, tx_buf);
+}
+
+void BladeRFDevice::stop_tx_stream() {
+    tx_running_.store(false);
+    if (tx_thread_.joinable())
+        tx_thread_.join();
+}
+
+void BladeRFDevice::tx_thread_fn(std::vector<std::complex<float>> tx_buf) {
+    // pad to multiple of TRANSFER_SAMPLES so no partial chunks
+    while (tx_buf.size() % TRANSFER_SAMPLES != 0)
+        tx_buf.push_back({0.0f, 0.0f});
+
+    // convert once to SC16_Q11
+    std::vector<int16_t> raw(tx_buf.size() * 2);
+    for (size_t i = 0; i < tx_buf.size(); ++i) {
+        raw[i * 2]     = static_cast<int16_t>(tx_buf[i].real() * 2047.0f);
+        raw[i * 2 + 1] = static_cast<int16_t>(tx_buf[i].imag() * 2047.0f);
+    }
+
+    size_t total = tx_buf.size();
+    while (tx_running_.load()) {
+        size_t sent = 0;
+        while (sent < total && tx_running_.load()) {
+            size_t chunk = std::min(static_cast<size_t>(TRANSFER_SAMPLES),
+                                    total - sent);
+            int status = bladerf_sync_tx(dev_, raw.data() + sent * 2,
+                                          static_cast<unsigned int>(chunk),
+                                          nullptr, 5000);
+            if (status != 0) {
+                log_error("tx_thread bladerf_sync_tx", status);
+                tx_running_.store(false);
+                return;
+            }
+            sent += chunk;
+        }
     }
 }
+
+// ─── streaming RX ─────────────────────────────────────────────────────────
+
+void BladeRFDevice::start_rx_stream() {
+    rx_running_.store(true);
+    rx_thread_ = std::thread(&BladeRFDevice::rx_thread_fn, this);
+}
+
+void BladeRFDevice::stop_rx_stream() {
+    rx_running_.store(false);
+    if (rx_thread_.joinable())
+        rx_thread_.join();
+}
+
+void BladeRFDevice::rx_thread_fn() {
+    std::vector<int16_t> raw(TRANSFER_SAMPLES * 2);
+    while (rx_running_.load()) {
+        int status = bladerf_sync_rx(dev_, raw.data(), TRANSFER_SAMPLES,
+                                      nullptr, 5000);
+        if (status != 0) {
+            log_error("rx_thread bladerf_sync_rx", status);
+            rx_running_.store(false);
+            return;
+        }
+        scale_and_push(raw.data(), TRANSFER_SAMPLES);
+    }
+}
+
+// ─── gain and frequency ───────────────────────────────────────────────────
 
 bool BladeRFDevice::set_frequency(uint64_t freq_hz) {
     int status = bladerf_set_frequency(dev_, BLADERF_CHANNEL_RX(0), freq_hz);
