@@ -23,7 +23,7 @@ Two-tap multipath channel (direct path + 30% reflection at 4-sample delay). Both
 
 ## What It Does
 
-Eight phases from first principles to hardware:
+Seven phases from first principles to hardware:
 
 | Phase | What was built |
 |-------|----------------|
@@ -34,8 +34,6 @@ Eight phases from first principles to hardware:
 | 5 | OFDM modulator/demodulator — IFFT/FFT via FFTW3, cyclic prefix, LTE-style pilot grid, LS channel estimation, one-tap equalizer, multipath validation |
 | 6 | BladeRF hardware streaming — threaded TX/RX at 40 MSPS, RF cable loopback, 14 dB confirmed SNR |
 | 7 | C-V2X PC5 sidelink demo — SCI format 1, BSM encode/decode over coded OFDM, all fields verified |
-| 8 | Publication figures, README |
-
 ---
 
 ## C-V2X Demo
