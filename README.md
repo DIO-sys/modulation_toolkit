@@ -199,8 +199,8 @@ python3 ofdm_multipath_plot.py
 
 ## Related
 
-- [spectrum_analyzer](https://github.com/DIO-sys/spectrum_analyzer) — the project that started this. Passive RF observation at 40 MSPS on the same hardware. Built to understand what was in the air. This project builds what puts meaning into it.
-
+- [spectrum_analyzer](https://github.com/DIO-sys/spectrum_analyzer) — the project before this. Passive RF observation at 40 MSPS on the same hardware. Built to understand what was in the air. This project builds what puts meaning into it.
+- [LTE_4g_network](https://github.com/DIO-sys/private-lte-network) — the project that started this. Building for communication in space, for tactical applications, and in vehicles
 
 ---
 
