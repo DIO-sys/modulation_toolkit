@@ -2,7 +2,7 @@
 
 The spectrum analyzer showed what was in the air. This project answers what it means.
 
-A persistent carrier at 915 MHz is just a spike on a waterfall but now we can actually control where those waterfall spikes go and the information that they communicate. This project builds that machinery from scratch: a full digital communications stack in C++17 on the same BladeRF 2.0 Micro xA4, going from raw bits to RF and back. The same chain inside every LTE base station, every satellite downlink, every tactical datalink.
+A persistent carrier at 915 MHz is just a spike on a waterfall but now we can actually control where those waterfall spikes go and the information that they communicate using some pieces from the spectrum analyzer, this project builds that machinery from scratch: a full digital communications stack in C++17 on the same BladeRF 2.0 Micro xA4, going from raw bits to RF and back. The same chain inside every LTE base station, every satellite downlink, every tactical datalink.
 
 ---
 
