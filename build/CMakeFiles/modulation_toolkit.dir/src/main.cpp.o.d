@@ -235,6 +235,7 @@ CMakeFiles/modulation_toolkit.dir/src/main.cpp.o: \
  /home/timodagoat/code/modulation_toolkit/include/ofdm/ofdm_modulator.hpp \
  /home/timodagoat/code/modulation_toolkit/include/ofdm/ofdm_demodulator.hpp \
  /home/timodagoat/code/modulation_toolkit/include/ofdm/channel_estimator.hpp \
+ /home/timodagoat/code/modulation_toolkit/include/cv2x/cv2x_sidelink.hpp \
  /home/timodagoat/code/modulation_toolkit/include/measurement/ber_analyzer.hpp \
  /usr/include/c++/15/iostream /usr/include/c++/15/fstream \
  /usr/include/c++/15/bits/codecvt.h \

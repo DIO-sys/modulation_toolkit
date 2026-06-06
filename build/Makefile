@@ -142,6 +142,19 @@ encoder_validation/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/build
 .PHONY : encoder_validation/fast
 
+#=============================================================================
+# Target rules for targets named bladerf_loopback
+
+# Build rule for target.
+bladerf_loopback: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bladerf_loopback
+.PHONY : bladerf_loopback
+
+# fast build rule for target.
+bladerf_loopback/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/build
+.PHONY : bladerf_loopback/fast
+
 src/channel/awgn_channel.o: src/channel/awgn_channel.cpp.o
 .PHONY : src/channel/awgn_channel.o
 
@@ -248,6 +261,7 @@ src/fec/conv_encoder.o: src/fec/conv_encoder.cpp.o
 src/fec/conv_encoder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/conv_encoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/conv_encoder.cpp.o
 .PHONY : src/fec/conv_encoder.cpp.o
 
 src/fec/conv_encoder.i: src/fec/conv_encoder.cpp.i
@@ -257,6 +271,7 @@ src/fec/conv_encoder.i: src/fec/conv_encoder.cpp.i
 src/fec/conv_encoder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/conv_encoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/conv_encoder.cpp.i
 .PHONY : src/fec/conv_encoder.cpp.i
 
 src/fec/conv_encoder.s: src/fec/conv_encoder.cpp.s
@@ -266,6 +281,7 @@ src/fec/conv_encoder.s: src/fec/conv_encoder.cpp.s
 src/fec/conv_encoder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/conv_encoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/conv_encoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/conv_encoder.cpp.s
 .PHONY : src/fec/conv_encoder.cpp.s
 
 src/fec/interleaver.o: src/fec/interleaver.cpp.o
@@ -275,6 +291,7 @@ src/fec/interleaver.o: src/fec/interleaver.cpp.o
 src/fec/interleaver.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/interleaver.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/interleaver.cpp.o
 .PHONY : src/fec/interleaver.cpp.o
 
 src/fec/interleaver.i: src/fec/interleaver.cpp.i
@@ -284,6 +301,7 @@ src/fec/interleaver.i: src/fec/interleaver.cpp.i
 src/fec/interleaver.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/interleaver.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/interleaver.cpp.i
 .PHONY : src/fec/interleaver.cpp.i
 
 src/fec/interleaver.s: src/fec/interleaver.cpp.s
@@ -293,6 +311,7 @@ src/fec/interleaver.s: src/fec/interleaver.cpp.s
 src/fec/interleaver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/interleaver.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/interleaver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/interleaver.cpp.s
 .PHONY : src/fec/interleaver.cpp.s
 
 src/fec/viterbi_decoder.o: src/fec/viterbi_decoder.cpp.o
@@ -302,6 +321,7 @@ src/fec/viterbi_decoder.o: src/fec/viterbi_decoder.cpp.o
 src/fec/viterbi_decoder.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/viterbi_decoder.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/viterbi_decoder.cpp.o
 .PHONY : src/fec/viterbi_decoder.cpp.o
 
 src/fec/viterbi_decoder.i: src/fec/viterbi_decoder.cpp.i
@@ -311,6 +331,7 @@ src/fec/viterbi_decoder.i: src/fec/viterbi_decoder.cpp.i
 src/fec/viterbi_decoder.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/viterbi_decoder.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/viterbi_decoder.cpp.i
 .PHONY : src/fec/viterbi_decoder.cpp.i
 
 src/fec/viterbi_decoder.s: src/fec/viterbi_decoder.cpp.s
@@ -320,6 +341,7 @@ src/fec/viterbi_decoder.s: src/fec/viterbi_decoder.cpp.s
 src/fec/viterbi_decoder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/fec/viterbi_decoder.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/fec/viterbi_decoder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/fec/viterbi_decoder.cpp.s
 .PHONY : src/fec/viterbi_decoder.cpp.s
 
 src/hw/bladerf_device.o: src/hw/bladerf_device.cpp.o
@@ -328,6 +350,7 @@ src/hw/bladerf_device.o: src/hw/bladerf_device.cpp.o
 # target to build an object file
 src/hw/bladerf_device.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/hw/bladerf_device.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/hw/bladerf_device.cpp.o
 .PHONY : src/hw/bladerf_device.cpp.o
 
 src/hw/bladerf_device.i: src/hw/bladerf_device.cpp.i
@@ -336,6 +359,7 @@ src/hw/bladerf_device.i: src/hw/bladerf_device.cpp.i
 # target to preprocess a source file
 src/hw/bladerf_device.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/hw/bladerf_device.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/hw/bladerf_device.cpp.i
 .PHONY : src/hw/bladerf_device.cpp.i
 
 src/hw/bladerf_device.s: src/hw/bladerf_device.cpp.s
@@ -344,6 +368,7 @@ src/hw/bladerf_device.s: src/hw/bladerf_device.cpp.s
 # target to generate assembly for a file
 src/hw/bladerf_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/hw/bladerf_device.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/hw/bladerf_device.cpp.s
 .PHONY : src/hw/bladerf_device.cpp.s
 
 src/hw/circular_buffer.o: src/hw/circular_buffer.cpp.o
@@ -352,6 +377,7 @@ src/hw/circular_buffer.o: src/hw/circular_buffer.cpp.o
 # target to build an object file
 src/hw/circular_buffer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/hw/circular_buffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/hw/circular_buffer.cpp.o
 .PHONY : src/hw/circular_buffer.cpp.o
 
 src/hw/circular_buffer.i: src/hw/circular_buffer.cpp.i
@@ -360,6 +386,7 @@ src/hw/circular_buffer.i: src/hw/circular_buffer.cpp.i
 # target to preprocess a source file
 src/hw/circular_buffer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/hw/circular_buffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/hw/circular_buffer.cpp.i
 .PHONY : src/hw/circular_buffer.cpp.i
 
 src/hw/circular_buffer.s: src/hw/circular_buffer.cpp.s
@@ -368,6 +395,7 @@ src/hw/circular_buffer.s: src/hw/circular_buffer.cpp.s
 # target to generate assembly for a file
 src/hw/circular_buffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/hw/circular_buffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/hw/circular_buffer.cpp.s
 .PHONY : src/hw/circular_buffer.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -401,6 +429,7 @@ src/measurement/ber_analyzer.o: src/measurement/ber_analyzer.cpp.o
 src/measurement/ber_analyzer.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/ber_analyzer.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/measurement/ber_analyzer.cpp.o
 .PHONY : src/measurement/ber_analyzer.cpp.o
 
 src/measurement/ber_analyzer.i: src/measurement/ber_analyzer.cpp.i
@@ -410,6 +439,7 @@ src/measurement/ber_analyzer.i: src/measurement/ber_analyzer.cpp.i
 src/measurement/ber_analyzer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/ber_analyzer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/measurement/ber_analyzer.cpp.i
 .PHONY : src/measurement/ber_analyzer.cpp.i
 
 src/measurement/ber_analyzer.s: src/measurement/ber_analyzer.cpp.s
@@ -419,6 +449,7 @@ src/measurement/ber_analyzer.s: src/measurement/ber_analyzer.cpp.s
 src/measurement/ber_analyzer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/ber_analyzer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/measurement/ber_analyzer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/measurement/ber_analyzer.cpp.s
 .PHONY : src/measurement/ber_analyzer.cpp.s
 
 src/measurement/evm_meter.o: src/measurement/evm_meter.cpp.o
@@ -427,6 +458,7 @@ src/measurement/evm_meter.o: src/measurement/evm_meter.cpp.o
 # target to build an object file
 src/measurement/evm_meter.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/evm_meter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/measurement/evm_meter.cpp.o
 .PHONY : src/measurement/evm_meter.cpp.o
 
 src/measurement/evm_meter.i: src/measurement/evm_meter.cpp.i
@@ -435,6 +467,7 @@ src/measurement/evm_meter.i: src/measurement/evm_meter.cpp.i
 # target to preprocess a source file
 src/measurement/evm_meter.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/evm_meter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/measurement/evm_meter.cpp.i
 .PHONY : src/measurement/evm_meter.cpp.i
 
 src/measurement/evm_meter.s: src/measurement/evm_meter.cpp.s
@@ -443,6 +476,7 @@ src/measurement/evm_meter.s: src/measurement/evm_meter.cpp.s
 # target to generate assembly for a file
 src/measurement/evm_meter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/measurement/evm_meter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/measurement/evm_meter.cpp.s
 .PHONY : src/measurement/evm_meter.cpp.s
 
 src/modulation/am_mod.o: src/modulation/am_mod.cpp.o
@@ -476,6 +510,7 @@ src/modulation/bpsk_demod.o: src/modulation/bpsk_demod.cpp.o
 src/modulation/bpsk_demod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_demod.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/bpsk_demod.cpp.o
 .PHONY : src/modulation/bpsk_demod.cpp.o
 
 src/modulation/bpsk_demod.i: src/modulation/bpsk_demod.cpp.i
@@ -485,6 +520,7 @@ src/modulation/bpsk_demod.i: src/modulation/bpsk_demod.cpp.i
 src/modulation/bpsk_demod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_demod.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/bpsk_demod.cpp.i
 .PHONY : src/modulation/bpsk_demod.cpp.i
 
 src/modulation/bpsk_demod.s: src/modulation/bpsk_demod.cpp.s
@@ -494,6 +530,7 @@ src/modulation/bpsk_demod.s: src/modulation/bpsk_demod.cpp.s
 src/modulation/bpsk_demod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_demod.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_demod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/bpsk_demod.cpp.s
 .PHONY : src/modulation/bpsk_demod.cpp.s
 
 src/modulation/bpsk_mod.o: src/modulation/bpsk_mod.cpp.o
@@ -503,6 +540,7 @@ src/modulation/bpsk_mod.o: src/modulation/bpsk_mod.cpp.o
 src/modulation/bpsk_mod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_mod.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/bpsk_mod.cpp.o
 .PHONY : src/modulation/bpsk_mod.cpp.o
 
 src/modulation/bpsk_mod.i: src/modulation/bpsk_mod.cpp.i
@@ -512,6 +550,7 @@ src/modulation/bpsk_mod.i: src/modulation/bpsk_mod.cpp.i
 src/modulation/bpsk_mod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_mod.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/bpsk_mod.cpp.i
 .PHONY : src/modulation/bpsk_mod.cpp.i
 
 src/modulation/bpsk_mod.s: src/modulation/bpsk_mod.cpp.s
@@ -521,6 +560,7 @@ src/modulation/bpsk_mod.s: src/modulation/bpsk_mod.cpp.s
 src/modulation/bpsk_mod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/bpsk_mod.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/bpsk_mod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/bpsk_mod.cpp.s
 .PHONY : src/modulation/bpsk_mod.cpp.s
 
 src/modulation/demodulator_base.o: src/modulation/demodulator_base.cpp.o
@@ -530,6 +570,7 @@ src/modulation/demodulator_base.o: src/modulation/demodulator_base.cpp.o
 src/modulation/demodulator_base.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/demodulator_base.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/demodulator_base.cpp.o
 .PHONY : src/modulation/demodulator_base.cpp.o
 
 src/modulation/demodulator_base.i: src/modulation/demodulator_base.cpp.i
@@ -539,6 +580,7 @@ src/modulation/demodulator_base.i: src/modulation/demodulator_base.cpp.i
 src/modulation/demodulator_base.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/demodulator_base.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/demodulator_base.cpp.i
 .PHONY : src/modulation/demodulator_base.cpp.i
 
 src/modulation/demodulator_base.s: src/modulation/demodulator_base.cpp.s
@@ -548,6 +590,7 @@ src/modulation/demodulator_base.s: src/modulation/demodulator_base.cpp.s
 src/modulation/demodulator_base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/demodulator_base.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/demodulator_base.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/demodulator_base.cpp.s
 .PHONY : src/modulation/demodulator_base.cpp.s
 
 src/modulation/fm_mod.o: src/modulation/fm_mod.cpp.o
@@ -581,6 +624,7 @@ src/modulation/mm_timing_pll.o: src/modulation/mm_timing_pll.cpp.o
 src/modulation/mm_timing_pll.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/mm_timing_pll.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/mm_timing_pll.cpp.o
 .PHONY : src/modulation/mm_timing_pll.cpp.o
 
 src/modulation/mm_timing_pll.i: src/modulation/mm_timing_pll.cpp.i
@@ -590,6 +634,7 @@ src/modulation/mm_timing_pll.i: src/modulation/mm_timing_pll.cpp.i
 src/modulation/mm_timing_pll.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/mm_timing_pll.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/mm_timing_pll.cpp.i
 .PHONY : src/modulation/mm_timing_pll.cpp.i
 
 src/modulation/mm_timing_pll.s: src/modulation/mm_timing_pll.cpp.s
@@ -599,6 +644,7 @@ src/modulation/mm_timing_pll.s: src/modulation/mm_timing_pll.cpp.s
 src/modulation/mm_timing_pll.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/mm_timing_pll.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/mm_timing_pll.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/mm_timing_pll.cpp.s
 .PHONY : src/modulation/mm_timing_pll.cpp.s
 
 src/modulation/modulator_base.o: src/modulation/modulator_base.cpp.o
@@ -608,6 +654,7 @@ src/modulation/modulator_base.o: src/modulation/modulator_base.cpp.o
 src/modulation/modulator_base.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/modulator_base.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/modulator_base.cpp.o
 .PHONY : src/modulation/modulator_base.cpp.o
 
 src/modulation/modulator_base.i: src/modulation/modulator_base.cpp.i
@@ -617,6 +664,7 @@ src/modulation/modulator_base.i: src/modulation/modulator_base.cpp.i
 src/modulation/modulator_base.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/modulator_base.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/modulator_base.cpp.i
 .PHONY : src/modulation/modulator_base.cpp.i
 
 src/modulation/modulator_base.s: src/modulation/modulator_base.cpp.s
@@ -626,6 +674,7 @@ src/modulation/modulator_base.s: src/modulation/modulator_base.cpp.s
 src/modulation/modulator_base.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/modulator_base.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/modulator_base.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/modulator_base.cpp.s
 .PHONY : src/modulation/modulator_base.cpp.s
 
 src/modulation/qam_demod.o: src/modulation/qam_demod.cpp.o
@@ -635,6 +684,7 @@ src/modulation/qam_demod.o: src/modulation/qam_demod.cpp.o
 src/modulation/qam_demod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_demod.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qam_demod.cpp.o
 .PHONY : src/modulation/qam_demod.cpp.o
 
 src/modulation/qam_demod.i: src/modulation/qam_demod.cpp.i
@@ -644,6 +694,7 @@ src/modulation/qam_demod.i: src/modulation/qam_demod.cpp.i
 src/modulation/qam_demod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_demod.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qam_demod.cpp.i
 .PHONY : src/modulation/qam_demod.cpp.i
 
 src/modulation/qam_demod.s: src/modulation/qam_demod.cpp.s
@@ -653,6 +704,7 @@ src/modulation/qam_demod.s: src/modulation/qam_demod.cpp.s
 src/modulation/qam_demod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_demod.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_demod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qam_demod.cpp.s
 .PHONY : src/modulation/qam_demod.cpp.s
 
 src/modulation/qam_mod.o: src/modulation/qam_mod.cpp.o
@@ -662,6 +714,7 @@ src/modulation/qam_mod.o: src/modulation/qam_mod.cpp.o
 src/modulation/qam_mod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_mod.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qam_mod.cpp.o
 .PHONY : src/modulation/qam_mod.cpp.o
 
 src/modulation/qam_mod.i: src/modulation/qam_mod.cpp.i
@@ -671,6 +724,7 @@ src/modulation/qam_mod.i: src/modulation/qam_mod.cpp.i
 src/modulation/qam_mod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_mod.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qam_mod.cpp.i
 .PHONY : src/modulation/qam_mod.cpp.i
 
 src/modulation/qam_mod.s: src/modulation/qam_mod.cpp.s
@@ -680,6 +734,7 @@ src/modulation/qam_mod.s: src/modulation/qam_mod.cpp.s
 src/modulation/qam_mod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qam_mod.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/qam_mod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qam_mod.cpp.s
 .PHONY : src/modulation/qam_mod.cpp.s
 
 src/modulation/qpsk_demod.o: src/modulation/qpsk_demod.cpp.o
@@ -688,6 +743,7 @@ src/modulation/qpsk_demod.o: src/modulation/qpsk_demod.cpp.o
 # target to build an object file
 src/modulation/qpsk_demod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qpsk_demod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qpsk_demod.cpp.o
 .PHONY : src/modulation/qpsk_demod.cpp.o
 
 src/modulation/qpsk_demod.i: src/modulation/qpsk_demod.cpp.i
@@ -696,6 +752,7 @@ src/modulation/qpsk_demod.i: src/modulation/qpsk_demod.cpp.i
 # target to preprocess a source file
 src/modulation/qpsk_demod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qpsk_demod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qpsk_demod.cpp.i
 .PHONY : src/modulation/qpsk_demod.cpp.i
 
 src/modulation/qpsk_demod.s: src/modulation/qpsk_demod.cpp.s
@@ -704,6 +761,7 @@ src/modulation/qpsk_demod.s: src/modulation/qpsk_demod.cpp.s
 # target to generate assembly for a file
 src/modulation/qpsk_demod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qpsk_demod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qpsk_demod.cpp.s
 .PHONY : src/modulation/qpsk_demod.cpp.s
 
 src/modulation/qpsk_mod.o: src/modulation/qpsk_mod.cpp.o
@@ -712,6 +770,7 @@ src/modulation/qpsk_mod.o: src/modulation/qpsk_mod.cpp.o
 # target to build an object file
 src/modulation/qpsk_mod.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qpsk_mod.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qpsk_mod.cpp.o
 .PHONY : src/modulation/qpsk_mod.cpp.o
 
 src/modulation/qpsk_mod.i: src/modulation/qpsk_mod.cpp.i
@@ -720,6 +779,7 @@ src/modulation/qpsk_mod.i: src/modulation/qpsk_mod.cpp.i
 # target to preprocess a source file
 src/modulation/qpsk_mod.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qpsk_mod.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qpsk_mod.cpp.i
 .PHONY : src/modulation/qpsk_mod.cpp.i
 
 src/modulation/qpsk_mod.s: src/modulation/qpsk_mod.cpp.s
@@ -728,6 +788,7 @@ src/modulation/qpsk_mod.s: src/modulation/qpsk_mod.cpp.s
 # target to generate assembly for a file
 src/modulation/qpsk_mod.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/qpsk_mod.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/qpsk_mod.cpp.s
 .PHONY : src/modulation/qpsk_mod.cpp.s
 
 src/modulation/rrc_filter.o: src/modulation/rrc_filter.cpp.o
@@ -737,6 +798,7 @@ src/modulation/rrc_filter.o: src/modulation/rrc_filter.cpp.o
 src/modulation/rrc_filter.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/rrc_filter.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/rrc_filter.cpp.o
 .PHONY : src/modulation/rrc_filter.cpp.o
 
 src/modulation/rrc_filter.i: src/modulation/rrc_filter.cpp.i
@@ -746,6 +808,7 @@ src/modulation/rrc_filter.i: src/modulation/rrc_filter.cpp.i
 src/modulation/rrc_filter.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/rrc_filter.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/rrc_filter.cpp.i
 .PHONY : src/modulation/rrc_filter.cpp.i
 
 src/modulation/rrc_filter.s: src/modulation/rrc_filter.cpp.s
@@ -755,6 +818,7 @@ src/modulation/rrc_filter.s: src/modulation/rrc_filter.cpp.s
 src/modulation/rrc_filter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/modulation/rrc_filter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/modulation/rrc_filter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/modulation/rrc_filter.cpp.s
 .PHONY : src/modulation/rrc_filter.cpp.s
 
 src/ofdm/channel_estimator.o: src/ofdm/channel_estimator.cpp.o
@@ -764,6 +828,7 @@ src/ofdm/channel_estimator.o: src/ofdm/channel_estimator.cpp.o
 src/ofdm/channel_estimator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/channel_estimator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/channel_estimator.cpp.o
 .PHONY : src/ofdm/channel_estimator.cpp.o
 
 src/ofdm/channel_estimator.i: src/ofdm/channel_estimator.cpp.i
@@ -773,6 +838,7 @@ src/ofdm/channel_estimator.i: src/ofdm/channel_estimator.cpp.i
 src/ofdm/channel_estimator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/channel_estimator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/channel_estimator.cpp.i
 .PHONY : src/ofdm/channel_estimator.cpp.i
 
 src/ofdm/channel_estimator.s: src/ofdm/channel_estimator.cpp.s
@@ -782,6 +848,7 @@ src/ofdm/channel_estimator.s: src/ofdm/channel_estimator.cpp.s
 src/ofdm/channel_estimator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/channel_estimator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/channel_estimator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/channel_estimator.cpp.s
 .PHONY : src/ofdm/channel_estimator.cpp.s
 
 src/ofdm/ofdm_demodulator.o: src/ofdm/ofdm_demodulator.cpp.o
@@ -791,6 +858,7 @@ src/ofdm/ofdm_demodulator.o: src/ofdm/ofdm_demodulator.cpp.o
 src/ofdm/ofdm_demodulator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_demodulator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/ofdm_demodulator.cpp.o
 .PHONY : src/ofdm/ofdm_demodulator.cpp.o
 
 src/ofdm/ofdm_demodulator.i: src/ofdm/ofdm_demodulator.cpp.i
@@ -800,6 +868,7 @@ src/ofdm/ofdm_demodulator.i: src/ofdm/ofdm_demodulator.cpp.i
 src/ofdm/ofdm_demodulator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_demodulator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/ofdm_demodulator.cpp.i
 .PHONY : src/ofdm/ofdm_demodulator.cpp.i
 
 src/ofdm/ofdm_demodulator.s: src/ofdm/ofdm_demodulator.cpp.s
@@ -809,6 +878,7 @@ src/ofdm/ofdm_demodulator.s: src/ofdm/ofdm_demodulator.cpp.s
 src/ofdm/ofdm_demodulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_demodulator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_demodulator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/ofdm_demodulator.cpp.s
 .PHONY : src/ofdm/ofdm_demodulator.cpp.s
 
 src/ofdm/ofdm_modulator.o: src/ofdm/ofdm_modulator.cpp.o
@@ -818,6 +888,7 @@ src/ofdm/ofdm_modulator.o: src/ofdm/ofdm_modulator.cpp.o
 src/ofdm/ofdm_modulator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_modulator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/ofdm_modulator.cpp.o
 .PHONY : src/ofdm/ofdm_modulator.cpp.o
 
 src/ofdm/ofdm_modulator.i: src/ofdm/ofdm_modulator.cpp.i
@@ -827,6 +898,7 @@ src/ofdm/ofdm_modulator.i: src/ofdm/ofdm_modulator.cpp.i
 src/ofdm/ofdm_modulator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_modulator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/ofdm_modulator.cpp.i
 .PHONY : src/ofdm/ofdm_modulator.cpp.i
 
 src/ofdm/ofdm_modulator.s: src/ofdm/ofdm_modulator.cpp.s
@@ -836,6 +908,7 @@ src/ofdm/ofdm_modulator.s: src/ofdm/ofdm_modulator.cpp.s
 src/ofdm/ofdm_modulator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/ofdm_modulator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/ofdm_modulator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/ofdm_modulator.cpp.s
 .PHONY : src/ofdm/ofdm_modulator.cpp.s
 
 src/ofdm/resource_grid.o: src/ofdm/resource_grid.cpp.o
@@ -845,6 +918,7 @@ src/ofdm/resource_grid.o: src/ofdm/resource_grid.cpp.o
 src/ofdm/resource_grid.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/resource_grid.cpp.o
 .PHONY : src/ofdm/resource_grid.cpp.o
 
 src/ofdm/resource_grid.i: src/ofdm/resource_grid.cpp.i
@@ -854,6 +928,7 @@ src/ofdm/resource_grid.i: src/ofdm/resource_grid.cpp.i
 src/ofdm/resource_grid.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/resource_grid.cpp.i
 .PHONY : src/ofdm/resource_grid.cpp.i
 
 src/ofdm/resource_grid.s: src/ofdm/resource_grid.cpp.s
@@ -863,6 +938,7 @@ src/ofdm/resource_grid.s: src/ofdm/resource_grid.cpp.s
 src/ofdm/resource_grid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/modulation_toolkit.dir/build.make CMakeFiles/modulation_toolkit.dir/src/ofdm/resource_grid.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/src/ofdm/resource_grid.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/src/ofdm/resource_grid.cpp.s
 .PHONY : src/ofdm/resource_grid.cpp.s
 
 tests/ber_loopback_test.o: tests/ber_loopback_test.cpp.o
@@ -889,6 +965,30 @@ tests/ber_loopback_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/encoder_validation.dir/build.make CMakeFiles/encoder_validation.dir/tests/ber_loopback_test.cpp.s
 .PHONY : tests/ber_loopback_test.cpp.s
 
+tests/bladerf_loopback_test.o: tests/bladerf_loopback_test.cpp.o
+.PHONY : tests/bladerf_loopback_test.o
+
+# target to build an object file
+tests/bladerf_loopback_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/tests/bladerf_loopback_test.cpp.o
+.PHONY : tests/bladerf_loopback_test.cpp.o
+
+tests/bladerf_loopback_test.i: tests/bladerf_loopback_test.cpp.i
+.PHONY : tests/bladerf_loopback_test.i
+
+# target to preprocess a source file
+tests/bladerf_loopback_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/tests/bladerf_loopback_test.cpp.i
+.PHONY : tests/bladerf_loopback_test.cpp.i
+
+tests/bladerf_loopback_test.s: tests/bladerf_loopback_test.cpp.s
+.PHONY : tests/bladerf_loopback_test.s
+
+# target to generate assembly for a file
+tests/bladerf_loopback_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bladerf_loopback.dir/build.make CMakeFiles/bladerf_loopback.dir/tests/bladerf_loopback_test.cpp.s
+.PHONY : tests/bladerf_loopback_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -897,6 +997,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... bladerf_loopback"
 	@echo "... encoder_validation"
 	@echo "... modulation_toolkit"
 	@echo "... src/channel/awgn_channel.o"
@@ -986,6 +1087,9 @@ help:
 	@echo "... tests/ber_loopback_test.o"
 	@echo "... tests/ber_loopback_test.i"
 	@echo "... tests/ber_loopback_test.s"
+	@echo "... tests/bladerf_loopback_test.o"
+	@echo "... tests/bladerf_loopback_test.i"
+	@echo "... tests/bladerf_loopback_test.s"
 .PHONY : help
 
 

@@ -49,4 +49,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/modulation_toolkit.dir/DependInfo.cmake"
   "CMakeFiles/encoder_validation.dir/DependInfo.cmake"
+  "CMakeFiles/bladerf_loopback.dir/DependInfo.cmake"
   )
